@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+    <!-- head: (NOTE: Different from header) Contains page title, metadata, external links. Should be included in all pages -->
+    <head>
+        <meta charset="utf-8">
+        <title>I'm Hungry | Crave no longer, we deliver</title>
+        <link type="text/css" rel="stylesheet" href="replaceLater.css">
+        <script src="replaceLater.js"> </script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <!-- body: Contains all visible content -->
+    <body>
+
+        <!-- header: Topmost bar that can include logo, navigation or text. Just copy paste this code to all pages -->
+        <header>
+            I'm Hungry Logo
+            <h1>PAYMENT</h1>
+            <i class="material-icons">account_circle</i>Account
+        </header>
+
+        <!-- hr: Let's use this to temporarily separate sections for now -->
+        <hr>
+
+
+        <!-- div: Divides a webpage into "boxes" or sections. As a rule of thumb, things that follow these should be placed under their own div:
+        1. Things that need to have a specific alignment or position in the page (e.g. center, right, fixed on the side, attached to the top)
+        2. Things that display a common theme/subject/purpose (e.g. order details, individual food pictures with their information) 
+        3. Things that are expected to have a unique behavior or look (e.g. collapsible menu, hero image)
+          
+        > id - Unique identifier. Choose any name that self-explains what the div is about
+        > class - Tells if the div belongs to a class of similar-looking components. For this example, I used "left", "center", or "right" to match the desired alignment in the prototype
+        NOTE: There's no layout yet because we haven't linked a stylesheet. The id and class params will guide those who are working with css and js. -->
+        
+        <div class="left">
+            <button>Back</button>
+
+            <div id="order-details">
+                <b>Order details</b> <br>
+                Cheese Pizza x1 $5 <br>
+                <b>Total</b> $5
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="center">
+            <div id="payment-method">
+                <b>Payment Method</b> <br>
+                <!-- More information on input types: https://www.w3schools.com/html/html_form_input_types.asp -->
+                <input type="radio" name="payment-option" checked="checked">Cash <br>
+                <input type="radio" name="payment-option">Debit/Credit <br>
+                    <div class="right">
+                        Card Number<input value="XXXX-XXXX-XXXX"><br>
+                        Expiry Date<input value="MM/YY">
+                        CVC<input><i class="material-icons">info</i><br>
+                    </div>
+                <input type="radio" name="payment-option">Gift Card <br>
+                    <div class="right">
+                        Card Number<input value="XXXX-XXXX-XXXX"><br>
+                    </div>
+            </div>
+        </div>
+            
+
+        <hr>
+
+        <div class="right">
+            <div id="delivery-instructions">
+                <b>Delivery Instructions</b> <br>
+                <input type="radio" name="delivery-option" checked="checked">Meet deliverer at door <br>
+                <input type="radio" name="delivery-option">Leave in front of door <br>
+            </div>
+
+            <button>Place Order</button>
+        </div>
+
+        <hr>
+
+        <!-- footer: Bottom bar that can include logo, navigation, or text. Just copy paste this code to all pages -->
+        <footer>
+            COMP3020, Group 45 © 2020 
+            <nav>
+                <ul>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms and Conditions</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </nav>
+        </footer>
+
+    </body>
+</html>

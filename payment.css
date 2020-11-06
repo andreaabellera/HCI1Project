@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;500;700;900&display=swap");
+
+:root{
+    --base:whitesmoke;
+    --text:darkslategrey;
+    --accent: crimson;
+}
+
+html,body{
+    color: var(--text);
+    background-color: var(--base);
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+article{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header{
+    color: var(--base);
+    background-color: var(--accent);
+    font-weight: 700;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    align-items:center;
+}
+
+.box{
+    border-color: var(--text);
+    border-style: solid;
+    margin: 4%;
+}
+
+.box-title{
+    color: var(--base);
+    background-color: var(--text);
+    font-size: larger;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
+}
+
+.box-content{
+    margin:2%;
+}
+
+.price{
+    float:right;
+}
+
+.qty{
+    font-weight: 800;
+}
+
+.cvc{
+    width:10%;
+}
+
+#grid-left{
+    justify-self:start;
+    margin-left: 3%;
+}
+
+#accountBar{
+    color:var(--base);
+    background-color: var(--text);
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    justify-self: end;
+}
+
+button{
+    color: var(--base);
+    background-color: var(--accent);
+    font-family: 'Nunito', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    border-color: var(--accent);
+    border-radius: 1em;
+    padding: 2%;
+    margin: 4%;
+    
+}
+
+.content{
+    display:grid;
+    grid-template-columns: 1fr 33% 1fr;
+
+}
+
+a{
+    color:lightskyblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color:lightcyan;
+}
+
+footer{
+    color:var(--base);
+    background-color: var(--text);
+    padding-bottom: 1%;
+}
+
+ul{
+    width: 120%;
+    list-style: none;
+}
+
+li{
+    float:left;
+    margin-left: 5%;
+}

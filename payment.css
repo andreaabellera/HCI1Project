@@ -84,6 +84,11 @@ header{
     justify-self: end;
 }
 
+#accountBar:hover{
+    background-color: #1a2125;
+    transition: 0.4s;
+}
+
 button{
     color: var(--base);
     background-color: var(--accent);
@@ -95,6 +100,11 @@ button{
     padding: 2%;
     margin: 4%;
     
+}
+
+button:hover{
+    background-color: firebrick;
+    transition: 0.3s;
 }
 
 .content{

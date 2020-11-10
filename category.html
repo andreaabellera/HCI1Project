@@ -4,28 +4,36 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Category Name</title>
-        <link type="text/css" rel="stylesheet" href="replaceLater.css">
+        <link type="text/css" rel="stylesheet" href="category.css">
         <script src="replaceLater.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
 	<body>
-	
-		<header> 
-			<img src="res/Logo/logo.png" alt="hungry logo">
-			<h1> Some Category </h1>
-			<i class="material-icons">account_circle</i>Account
+	<article>
+		
+		<header class="container"> 
+			<div class="logo">
+				<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
+			</div>
+			
+			<div class="name">
+				<h1> Some Category </h1>
+			</div>
+			
+			<div class="accountBar">
+				<i class="material-icons">account_circle</i>Account
+			</div>
 		</header>
 		
-		<hr>
-		
+		<div class="content">
 		<div class="topnav">
-			<input type = "text" placeholder="Search...">
-		
+			<input type = "text" placeholder="Search..." id="search">
 		</div>
 		
-		<hr>
+		<div class="results">
 		
+		<div class="clearfix">
         <div class="gallery">
 				<a class="item" href="mcdonalds.html">
 					<img src="res/Restaurants/McDonalds/logo.png" alt="Logo" width="200" height="200">
@@ -39,20 +47,23 @@
 				</a>
 				<div class="desc">A&W</div>
 			</div>
-			
-		<hr>
-        
-        <footer>
-            COMP3020, Group 45 © 2020 
-            <nav>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-        </footer>
+		</div>
+		</div>
+		</div>
 		
+        
+		<footer class="container">
+				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
+				<nav>
+					<ul>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms and Conditions</a></li>
+						<li><a href="#">Contact us</a></li>
+					</ul>
+				</nav>
+		</footer>
+
+	</article>
 	</body>
 
 

@@ -4,49 +4,61 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Punjab Food Corner</title>
-        <link type="text/css" rel="stylesheet" href="replaceLater.css">
+        <link type="text/css" rel="stylesheet" href="restaurant.css">
         <script src="replaceLater.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 	
 	<body>
+	<article>
 	
-		<header> 
-			<img src="res/Logo/logo.png" alt="hungry logo">
-			<h1> Punjab Food Corner </h1>
-			<i class="material-icons">account_circle</i>Account
+		<header class="container"> 
+			<div class="logo">
+				<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
+			</div>
+			
+			<div class="name">
+				<h1> Punjab Food Corner </h1>
+			</div>
+			
+			<div class="accountBar">
+				<i class="material-icons">account_circle</i>Account
+			</div>
 		</header>
 		
-		<hr>
 		
-		<div class="left">
-			<b> restaurant tracker</b>
+		
+		<div class="content">
+		<div class="box res-track">
+			<div id="tracker-title"><b>Restaurant Tracker</b></div>
 			
-			<h3>Snacks</h3>
-			<h3>Burgers</h3>
-			<h3>Bread</h3>
-			<h3>Sweets</h3>
+			<h3 class="tracker">Snacks</h3>
+			<h3 class="tracker">Burgers</h3>
+			<h3 class="tracker">Bread</h3>
+			<h3 class="tracker">Sweets</h3>
 		
 		</div>
 		
-		<hr>
 		
 		<div class="center">
-			<div id = "exclusion-tags">
-				<b>exclusion tags</b>
-				<input type="checkbox" name ="allergy-option">meat
-				<input type="checkbox" name ="allergy-option">cooler meat
 		
+		<div class="box">
+			<div id = "exclusion-tags">
+				<b><span style="margin-right:2%;">Exclusion Tags</span></b>
+				
+					<input type="checkbox" name ="allergy-option" id="tag">meat
+					<input type="checkbox" name ="allergy-option" id="tag">cooler meat
+				
 			</div>
 			
-			<hr>
+			
 			
 			
 			<!-- will be done using an accordian eventually https://www.w3schools.com/howto/howto_js_accordion.asp -->
 			
-			<div id = "menu">
+			<div class = "box main">
 				<button type="button" class="collapsible">Snacks</button>
-				<div class="content">
+				<div class="items">
 				
 					<div class="gallery">
 						<h3> Samosa </h3>
@@ -74,7 +86,7 @@
 				</div>
 				
 				<button type="button" class="collapsible">Burgers</button>
-				<div class="content">
+				<div class="items">
 				
 					<div class="gallery">
 						<h3> Vegetable Burger </h3>
@@ -106,7 +118,7 @@
 				</div>
 				
 				<button type="button" class="collapsible">Breads</button>
-				<div class="content">
+				<div class="items">
 				
 					<div class="gallery">
 						<h3> Tawa Roti </h3>
@@ -136,7 +148,7 @@
 				</div>
 				
 				<button type="button" class="collapsible">Sweets</button>
-				<div class="content">
+				<div class="items">
 				
 					<div class="gallery">
 						<h3> Gulaab Jamun (2 pcs) (Per Piece) </h3>
@@ -177,22 +189,32 @@
 			</div>
 		</div>
 		
-		<hr>
-		
-		<div class ="right">
-			<div id = "order details">
-				<b>Order details</b> <br>
-                placeholder menu item <br>
-                <b>Total</b> $???
-			</div>
-			
-			<button><a href="payment.html">Checkout</a></button><br>
 		</div>
 		
-		<hr>
+		<div class ="box order">
+				<div id="order-title">
+					<b>Order Details</b>
+				</div> <br>
+				
+			<div id="order-grid">
+				<div class="receipt">
+					placeholder menu item <br>
+				</div>
+					
+				<hr>
+					
+                <div class="total">
+					<b>Total</b> <span style="float: right;">$???</span> 
+				</div>
+			
+			<button id="checkout"><a href="payment.html" id="checkout">Checkout</a></button><br>
+			</div>
+		</div>
+		</div>
 
-		<footer>
-				COMP3020, Group 45 © 2020 
+
+		<footer class="container">
+				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
 				<nav>
 					<ul>
 						<li><a href="#">Privacy Policy</a></li>
@@ -202,6 +224,7 @@
 				</nav>
 		</footer>
 
+	</article>
 	</body>
 	
 </html>

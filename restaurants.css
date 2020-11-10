@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");
+
+:root{
+    --light:whitesmoke;
+    --dark:darkslategrey;
+    --accent: crimson;
+}
+
+html, body {
+    color: var(--dark);
+    background-color: var(--light);
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    display: grid;
+	width: 100%;
+	height: 100%;
+	
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	
+	overflow: auto;
+}
+
+article{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+	grid-template-columns: 1fr;
+}
+
+header{
+    color: var(--light);
+    background-color: var(--accent);
+    font-weight: 700;
+}
+
+.logo {
+	justify-self:start;
+    margin-left: 3%;
+}
+
+.accountBar{
+    color:var(--light);
+    background-color: var(--dark);
+    font-size: large;
+	padding: 5% 15%;
+    justify-self: end;
+	cursor: pointer;
+}
+
+.container {
+	display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    align-items:center;
+}
+
+.content {
+	display: grid;
+	grid-template-rows: auto 1fr;
+}
+
+.topnav {
+	padding: 1%;
+	margin: 0;
+}
+
+#search {
+	width: 95%;
+	padding: 0.5%;
+	margin: 0;
+	margin-left: 1.7%;
+	top: 0;
+	font-size: 16px;
+	border: solid 0.15em var(--dark);
+	border-radius: 0.5em;
+
+}
+
+.section {
+	color: var(--dark);
+	padding-left: 1em;
+	padding-right: 1em;
+	font-size: 1.5em;
+	border: solid 0.5em var(--light);
+	background-color: var(--dark);
+	color: var(--light);
+	border-radius: 1em;
+}
+
+.clearfix::after {
+	content: "";
+	clear: both;
+	display: table;
+	margin-bottom: 2em;
+}
+
+.row {
+	margin: 0;
+	padding: 0;
+}
+
+.gallery:hover {
+	opacity: 0.6;
+}
+
+.gallery {
+	margin:0.5em;
+	margin-left: 2.5em;
+	float: left;
+	transition: opacity 0.5s ease;
+	padding: 0.3em;
+}
+
+img {
+	border-radius: 1em;
+}
+
+.desc {
+	color: var(--light);
+	text-align: center;
+	border-radius: 1em;
+	background: var(--accent);
+	padding: 10px;
+	margin: 0;
+
+}
+
+.item {
+	color: var(--dark);
+}
+
+a{
+    color:lightskyblue;
+	text-decoration: none;
+}
+
+a:hover{
+    color:lightcyan;
+}
+
+.copyright {
+	margin-top: 2.5%; 
+	justify-self: left; 
+	margin-left: 2%;
+}
+
+ul{
+    width: 120%;
+    list-style: none;
+	margin: 0;
+	margin-top: 2%;
+}
+
+li{
+    float:left;
+	margin: 0;
+    margin-left: 5%;
+}
+
+footer{
+    color:var(--light);
+    background-color: var(--dark);
+    padding-bottom: 0.5%;
+}

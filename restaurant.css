@@ -43,9 +43,14 @@ header{
     color:var(--light);
     background-color: var(--dark);
     font-size: large;
-	padding: 5% 15%;
+    padding: 5% 15%;
     justify-self: end;
-	cursor: pointer;
+    cursor: pointer;
+}
+
+.accountBar:hover{
+    background-color: #1a2125;
+    transition: 0.4s;
 }
 
 .container {
@@ -137,12 +142,11 @@ button:hover{
 }
 
 .collapsible {
-	width: 47em;
+	width: 98%;
 	text-align: left;
 	margin-top: 2%;
 	margin-bottom: 0;
-	margin-left: 0.5%;
-	margin-right: 0;
+	margin-left: 1%;
 }
 
 .gallery {
@@ -151,10 +155,16 @@ button:hover{
 	border-radius: 1em;
 	transition: background-color 0.5s ease;
 	cursor: pointer;
+	display: grid;
+	grid-template-columns: 20% 80%;
 }
 
 .gallery:hover {
 	background-color: #e1e1e1;
+}
+
+.gallery-info {
+	margin-left: 3%;
 }
 
 a{

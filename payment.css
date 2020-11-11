@@ -82,6 +82,7 @@ header{
     padding-left: 15%;
     padding-right: 15%;
     justify-self: end;
+    cursor: pointer;
 }
 
 #accountBar:hover{
@@ -100,6 +101,11 @@ button{
     padding: 2%;
     margin: 4%;
     
+}
+
+button a{
+    color: var(--base);
+    text-decoration: none;
 }
 
 button:hover{
@@ -126,6 +132,12 @@ footer{
     color:var(--base);
     background-color: var(--text);
     padding-bottom: 1%;
+}
+
+.copyright {
+	margin-top: 2.5%; 
+	justify-self: left; 
+	margin-left: 2%;
 }
 
 ul{

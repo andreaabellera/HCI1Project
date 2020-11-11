@@ -163,6 +163,9 @@ button:hover{
 	background-color: #e1e1e1;
 }
 
+.gallery-picture {
+	border-radius: 1em;
+}
 .gallery-info {
 	margin-left: 3%;
 }
@@ -180,11 +183,23 @@ a:hover{
 	border-left: solid 5px var(--dark);
 }
 
+section{
+	text-align: center;
+}
+
 .receipt {
 	margin: 0;
 	padding: 5%;
 	height: 21.45em;
 	overflow: auto;
+}
+
+.price{
+    float:right;
+}
+
+.qty{
+    font-weight: 800;
 }
 
 .total {
@@ -197,7 +212,7 @@ a:hover{
 	color: var(--light);
 	border-radius: 0.7em;
 	margin: 2% 0 2% 1.5%;
-	width: 13.5em;
+	width: 80%;
 }
 
 .copyright {

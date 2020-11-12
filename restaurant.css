@@ -94,6 +94,10 @@ header{
 	background-color: firebrick;
 }
 
+.back{
+	margin-top: 40%;
+}
+
 .content {
 	display: grid;
 	grid-template-columns: 12% 68% 20%;
@@ -136,6 +140,11 @@ button{
 	cursor: pointer;
 	transition: background-color 0.3s;
     
+}
+
+button a{
+    color: var(--base);
+    text-decoration: none;
 }
 
 button:hover{

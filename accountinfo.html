@@ -4,38 +4,41 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Account Info</title>
-        <link type="text/css" rel="stylesheet" href="replaceLater.css">
+        <link type="text/css" rel="stylesheet" href="accountinfo.css">
         <script src="replaceLater.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
 	<body>
-	
+	<article>
 		<header> 
-			<img src="res/Logo/logo.png" alt="hungry logo">
+			<div class ="grid-left">
+				<img src="res/Logo/logowhite.png" height=40% width=40%></img>
+			</div>
 			<h1> Account Information </h1>
 			<i class="material-icons">account_circle</i>Account
 		</header>
 		
-		<hr>
+		
 		
 		<div class="left">
 			<button><a href="home.html">Sign up</a></button>
 		</div>
 		
-		<hr>
+		
 		
 		<div class="center">
-			<div id="account-info"</div>
+			<div id="account-info">
 				Name:<input><br>
 				Email:<input><br>
 				Password:<input><br>
 			
 			</div>
+		</div>
 			
-			<hr>
 			
-			<div id="allergies"</div>
+			
+			<div id="allergies">
 				<b>Allergies</b> <br>
 				<input type="checkbox" name ="allergy-option">some allergy <br>
 				<input type="checkbox" name ="allergy-option">another allergy <br>
@@ -44,12 +47,12 @@
 				<input type="checkbox" name ="allergy-option">im out of ideas <br>
 			</div>
 			
-			<hr>
+			
 			
 		</div>
 		
 		<div class="right">
-			<div id="preferences"</div>
+			<div id="preferences">
 				<b>Preferences</b> <br>
 				<input type="checkbox" name ="allergy-option">pizza <br>
 				<input type="checkbox" name ="allergy-option">some other food i like <br>
@@ -59,18 +62,19 @@
 			</div>
 		</div>
 		
-		<hr>
 		
-		<footer>
-            COMP3020, Group 45 © 2020 
-            <nav>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-        </footer>
+		
+		<footer class="container">
+			<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
+			<nav>
+				<ul>
+					<li><a href="#">Privacy Policy</a></li>
+					<li><a href="#">Terms and Conditions</a></li>
+					<li><a href="#">Contact us</a></li>
+				</ul>
+			</nav>
+		</footer>
+	</article>
 	</body>
 
 </html>

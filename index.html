@@ -4,43 +4,50 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Login</title>
-        <link type="text/css" rel="stylesheet" href="replaceLater.css">
+        <link type="text/css" rel="stylesheet" href="index.css">
         <script src="replaceLater.js"> </script>
-        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
 	<body>
+		<article>
+			<header class="container"> 
+				<div class="logo">
+					<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
+				</div>
+				<div class="name">
+					<h1> LOGIN </h1>
+				</div>
+				<div id="accountBar">
+					<i class="material-icons">account_circle</i>Account
+				</div>
+			</header>
 	
-		<header> 
-			<img src="res/Logo/logo.png" alt="hungry logo">
-			<h1> Login </h1>
-			<i class="material-icons">account_circle</i>Account
-		</header>
-	
-		<hr>
-			<div class="center">
-				<div id="login-prompt">
-					Email:<input><br>
-					Password:<input type="password"><br>
-					<button><a href="accountinfo.html">Login</a></button><br>
-					<button><a href="accountinfo.html">Signup</a></button><button><a href="home.html">Guest</a></button><br>
-				
 		
+			<div class="center">
+				<div class="box">
+					<div class="login-prompt box-content">
+						<p> Email: </p>
+						<input>
+						<p> Password: </p>
+						<input>
+						<button><a href="accountinfo.html">Login</a></button>
+						<button><a href="accountinfo.html">Signup</a></button>
+						<button class="wide"><a href="home.html">Guest</a></button>	
+					</div>
 				</div>
 			</div>
-			
-		<hr>
 		
-		<footer>
-            COMP3020, Group 45 © 2020 
-            <nav>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-        </footer>
-		
+            <footer class="container">
+				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
+				<nav>
+					<ul>
+						<li><a href="privacypolicy.html">Privacy Policy</a></li>
+						<li><a href="terms.html">Terms and Conditions</a></li>
+						<li><a href="contact.html">Contact us</a></li>
+					</ul>
+				</nav>
+			</footer>
+		</article>
 	</body>
 </html>	

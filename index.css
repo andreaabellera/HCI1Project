@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;600;700;800;900&display=swap");:root{
+    --base:whitesmoke;
+    --text:darkslategrey;
+    --accent: crimson;
+}
+
+:root{
+    --base:whitesmoke;
+    --text:darkslategrey;
+    --accent: crimson;
+}
+
+html,body{
+    color: var(--text);
+    background-color: var(--base);
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    display: grid;
+    height: 100%;
+    width: 100%;
+}
+
+article{
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+header{
+    color: var(--base);
+    background-color: var(--accent);
+    font-weight: 700;
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    align-items:center;
+}
+
+#grid-left{
+    justify-self:start;
+    margin-left: 3%;
+}
+
+#accountBar{
+    color:var(--base);
+    background-color: var(--text);
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    justify-self: end;
+    cursor: pointer;
+}
+
+#accountBar:hover{
+    background-color: #1a2125;
+    transition: 0.4s;
+}
+
+
+.center{
+    background-image: url('res/Food/apple-turnover.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-size: larger;
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
+    align-items: center;
+    padding-bottom: 15%;
+}
+
+.box{
+    background-color: white;
+    border-color: var(--text);
+    border-style: solid;
+    margin: 4%;
+}
+
+.box-content{
+    margin:7%;
+}
+
+.login-prompt{
+    display: grid;
+    align-items: center;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 1fr;
+}
+
+input{
+    height:40%;
+}
+
+button{
+    color: var(--base);
+    background-color: var(--accent);
+    font-family: 'Nunito', sans-serif;
+    font-size: large;
+    font-weight: bold;
+    border-color: var(--accent);
+    border-radius: 1em;
+    margin: 2%;
+    padding-left: 3%;
+    padding-right: 3%;
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+button a{
+    color: var(--base);
+    text-decoration: none;
+}
+
+button:hover{
+    background-color: firebrick;
+    transition: 0.3s;
+}
+
+.wide{
+    grid-column: 1/3;
+}
+
+.content{
+    display:grid;
+    grid-template-columns: 1fr 33% 1fr;
+
+}
+
+a{
+    color:lightskyblue;
+    text-decoration: none;
+}
+
+a:hover{
+    color:lightcyan;
+}
+.container{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    align-items:center;
+}
+
+footer{
+    color:var(--base);
+    background-color: var(--text);
+    padding-bottom: 1%;
+    
+}
+
+.copyright {
+	margin-top: 2.5%; 
+	justify-self: center;
+    margin-left: 2%;
+    font-size: small;
+ 
+}
+
+ul{
+    width: 120%;
+    list-style: none;
+    font-size: medium;
+    
+}
+
+li{
+    float:left;
+    margin-left: 5%;
+    font-size: medium;
+    
+}

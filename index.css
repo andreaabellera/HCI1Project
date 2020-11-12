@@ -90,11 +90,26 @@ header{
     display: grid;
     align-items: center;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 25% 25% 1fr;
+    grid-template-rows: 20% 20% auto 1fr;
 }
 
 input{
     height:40%;
+    background-color: aliceblue;
+}
+
+.aside{
+    grid-column: 1/3;
+    justify-self: end;
+    font-size: medium;
+}
+
+.aside a{
+    color: mediumblue;
+}
+
+.aside a:hover{
+    color: cornflowerblue;
 }
 
 button{

@@ -110,6 +110,7 @@ button a{
 button:hover{
     background-color: firebrick;
     transition: 0.3s;
+    cursor:pointer;
 }
 
 .content{

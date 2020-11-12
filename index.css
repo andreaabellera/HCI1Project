@@ -79,6 +79,7 @@ header{
     border-color: var(--text);
     border-style: solid;
     margin: 4%;
+    width: 25%;
 }
 
 .box-content{
@@ -119,6 +120,7 @@ button a{
 button:hover{
     background-color: firebrick;
     transition: 0.3s;
+    cursor:pointer
 }
 
 .wide{
@@ -151,27 +153,20 @@ footer{
     color:var(--base);
     background-color: var(--text);
     padding-bottom: 1%;
-    
 }
 
 .copyright {
 	margin-top: 2.5%; 
-	justify-self: center;
-    margin-left: 2%;
-    font-size: small;
- 
+	justify-self: left; 
+	margin-left: 2%;
 }
 
 ul{
     width: 120%;
     list-style: none;
-    font-size: medium;
-    
 }
 
 li{
     float:left;
     margin-left: 5%;
-    font-size: medium;
-    
 }

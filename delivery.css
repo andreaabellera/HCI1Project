@@ -46,46 +46,44 @@ header{
     line-height: 26px;
     margin-bottom: 10px;
 }
-    
-input{height: 20px;
-    flex: 0 0 200px;
-    margin-left: 10px;
-
-
+#accountBar{
+    color:var(--base);
+    background-color: var(--text);
+    font-size: large;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    padding-left: 15%;
+    padding-right: 15%;
+    justify-self: end;
+    cursor: pointer;
 }
-#address-prompt{
-    width: 95%;
-	padding: 0.5%;
-	margin: 0;
-	margin-left: 1.7%;
-	top: 0;
-	font-size: 16px;
-    border: solid 0.15em var(--dark);
-	border-radius: 0.5em;
-}
-button{
-    color: var(--base);
-    background-color: var(--accent);
-    font-family: 'Nunito', sans-serif;
-    font-size: larger;
-    font-weight: bold;
-    border-color: var(--accent);
-    border-radius: 1em;
-    padding: 2%;
+
+#accountBar:hover{
+    background-color: #1a2125;
+    transition: 0.4s;
+}   
+.box{
+    border-color: var(--text);
+    border-style: solid;
     margin: 4%;
-    
 }
 
-button a{
+.box-title{
     color: var(--base);
-    text-decoration: none;
+    background-color: var(--text);
+    font-size: larger;
+    text-align: center;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    margin-bottom: 2%;
 }
+
+
 
 button:hover{
     background-color: firebrick;
     transition: 0.3s;
 }
-
 .content{
     display:grid;
     grid-template-columns: 1fr 33% 1fr;
@@ -100,25 +98,39 @@ a{
 a:hover{
     color:lightcyan;
 }
+.container{
+    display: grid;
+    grid-template-columns: 1fr 40% 1fr;
+    grid-gap: 2%;
+    justify-items: center;
+    align-items:center;
+}
 
 footer{
     color:var(--base);
     background-color: var(--text);
     padding-bottom: 1%;
+    
 }
 
 .copyright {
 	margin-top: 2.5%; 
-	justify-self: left; 
-	margin-left: 2%;
+	justify-self: center;
+    margin-left: 2%;
+    font-size: small;
+ 
 }
 
 ul{
     width: 120%;
     list-style: none;
+    font-size: medium;
+    
 }
 
 li{
     float:left;
     margin-left: 5%;
+    font-size: medium;
+    
 }

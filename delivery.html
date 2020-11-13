@@ -12,30 +12,35 @@
 	<body>
         <article>
 	
-		<header> 
-            <div class ="grid-left">
-                <img src="res/Logo/logowhite.png" height=40% width=40%></img>
-            </div>
-			<h1> Delivery Status </h1>
-			<i class="material-icons">account_circle</i>Account
-		</header>
+            <header class="container"> 
+				<div class="logo">
+					<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
+				</div>
+				<div class="name">
+					<h1> Delivery Status </h1>
+				</div>
+				<div id="accountBar">
+					<i class="material-icons">account_circle</i>Account
+				</div>
+			</header>
 		
-		
-		
-		<div class="left">
-			<div id="order-details">
-                <b>Order details</b> <br>
-                placeholder item here <br>
-                <b>Total</b> $???
+		<div class="Center">
+			<div id="order-details" class="box">
+                <div class="box-title">
+                    <b>Order Details</b>
+                </div>
+                <div class="box-content">
+                    Cheese Pizza <span class="qty">(x1)</span> <span class="price">$5</span><br>
+                    Sprite <span class="qty">(x1)</span> <span class="price">$5</span><br>
+                    <hr>
+                    <b>Total</b> <span class="price">$10</span>
+                </div>
             </div>
 		
 		</div>
 		
-		
-		
 		<div class="center">
-			<b>order placed, details about the order as well </b><br>
-			<b>progress bar somewhere here</b>
+			<b>Order Arriving in Progress Bar here</b>
 	
 		</div>
 

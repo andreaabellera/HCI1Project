@@ -3,7 +3,7 @@
 
 	<head>
         <meta charset="utf-8">
-        <title>I'm Hungry | Devliery Status</title>
+        <title>I'm Hungry | Delivery Status</title>
         <link type="text/css" rel="stylesheet" href="delivery.css">
         <script src="replaceLater.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -11,7 +11,6 @@
 	
 	<body>
         <article>
-	
             <header class="container"> 
 				<div class="logo">
 					<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
@@ -23,39 +22,44 @@
 					<i class="material-icons">account_circle</i>Account
 				</div>
 			</header>
-		
-		<div class="Center">
-			<div id="order-details" class="box">
-                <div class="box-title">
-                    <b>Order Details</b>
-                </div>
-                <div class="box-content">
-                    Cheese Pizza <span class="qty">(x1)</span> <span class="price">$5</span><br>
-                    Sprite <span class="qty">(x1)</span> <span class="price">$5</span><br>
-                    <hr>
-                    <b>Total</b> <span class="price">$10</span>
-                </div>
-            </div>
-		
-		</div>
-		
-		<div class="center">
-			<b>Order Arriving in Progress Bar here</b>
-	
-		</div>
-
         
-        <footer class="container">
-            <div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
-            <nav>
-                <ul>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms and Conditions</a></li>
-                    <li><a href="#">Contact us</a></li>
-                </ul>
-            </nav>
-        </footer>
-	</article>
+            <div class="content">
+                <div id="order-details" class="box">
+                    <div class="box-title">
+                        <b>Receipt</b>
+                    </div>
+                    <div class="box-content">
+                        Cheese Pizza <span class="qty">(x1)</span> <span class="price">$5</span><br>
+                        Sprite <span class="qty">(x1)</span> <span class="price">$5</span><br>
+                        <hr>
+                        <b>Total</b> <span class="price">$10</span>
+                    </div>
+                </div>
+
+                <div class="progress">
+                    <h1> Thank you for ordering at I'm Hungry. </h1>
+                    <p> Your confirmation number is: 3P06Y4D8XC </p>
+                    <p><b> A receipt had been sent to your email. </b></p>
+                    <div class="progress-bar">
+                        <!-- Insert progress bar here -->
+                    </div>
+                    <p class="progress-status">Waiting for restaurant to accept order... 0%</p>
+                </div>
+
+            </div>
+
+            
+            <footer class="container">
+                <div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
+                <nav>
+                    <ul>
+                        <li><a href="privacypolicy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms and Conditions</a></li>
+                        <li><a href="contact.html">Contact us</a></li>
+                    </ul>
+                </nav>
+            </footer>
+        </article>
 	</body>
 
 </html>

@@ -4,8 +4,8 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Punjab Food Corner</title>
-        <link type="text/css" rel="stylesheet" href="restaurant.css">
-        <script src="replaceLater.js"> </script>
+        <link type="text/css" rel="stylesheet" href="restaurant.css"> <!--ToDO: create seperate CSS for modal-->
+       <!-- <script src="replaceLater.js"> </script>-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 	
@@ -18,7 +18,7 @@
 			</div>
 			
 			<div class="name">
-				<h1> PUNJAB FOOD CORNER! </h1>
+				<h1> PUNJAB FOOD CORNER </h1>
 			</div>
 			
 			<div class="accountBar">
@@ -46,28 +46,27 @@
 		<div class="box">
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
-				
+				<!----TODO: add javascript to exclusion tags-->
 					<input type="checkbox" name ="allergy-option" id="tag">meat
 					<input type="checkbox" name ="allergy-option" id="tag">cooler meat
 					<input type="checkbox" name ="allergy-option" id="tag">gluten
 				
 			</div>
-			
 			<div class = "box main">
 				<button type="button" class="collapsible">Snacks</button>
 				<div class="items">
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "samosa">
 							<h3> Samosa </h3>
 							<p> Crispy turnovers filled with spiced potatoes and peas.  Price : $1.25 </p>
 						</div>
 					</div>
-					
+
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/golgappa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "golgappa">
 							<h3> Golgappa (7 pcs)</h3>
 							<p> Round hollow puri fried and filled with a mixture of flavoured 
 							water, tamarind chutney, chilly, chat masala, potatoes, and onions. Price : $6.99 </p>
@@ -76,7 +75,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tikki-chaat.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "tikki">
 							<h3> Tikki Chaat </h3>
 							<p> Two potato patties smothered with chickpeas curry garnished with diced onions, and 
 							sliced carrots drizzled with tamarind sauce and mint chutney. Price : $6.99 </p>
@@ -85,7 +84,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/fried-rice.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "fried_rice">
 							<h3> Fried Rice </h3>
 							<p> Basmati rice cooked with mixed vegetables. Price : $8.99 </p>
 						</div>
@@ -99,7 +98,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/vegetable-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "v_burger">
 							<h3> Vegetable Burger </h3>
 							<p> Fried potato patty in a bun with lettuce, onion, tomato, and housemade sauces. Price : $6.99 </p>
 						</div>
@@ -107,7 +106,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/noodle-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "n_burger">
 							<h3> Noodle Burger </h3>
 							<p> Indian style fried potato patty in a bun with noodles, lettuce, onion, tomato, and housemade sauces. Price : $6.99 </p>
 						</div>
@@ -115,7 +114,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/chicken-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "c_burger">
 							<h3> Chicken Burger </h3>
 							<p> Fried chicken patty in a bun with lettuce, onion, and house made sauces. Price : $6.99 </p>
 						</div>
@@ -123,7 +122,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/butter-chicken-burger.webp'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "bc_burger">
 							<h3> Butter Chicken Burger </h3>
 							<p> Price : $7.99 </p>
 						</div>
@@ -131,7 +130,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/veggie-burger-fries-drink.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "v_burger_combo">
 							<h3> Vegetable Burger with Fries and Drink </h3>
 							<p> Price : $8.99 </p>
 						</div>
@@ -146,7 +145,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tawa-roti.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "tawa">
 							<h3> Tawa Roti </h3>
 							<p> Price : $0.90 </p>
 						</div>
@@ -154,7 +153,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tandoori-roti.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "tandoori">
 							<h3> Tandoori Roti </h3>
 							<p> Price : $1.99 </p>
 						</div>
@@ -162,7 +161,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/coriander-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "c_naan">
 							<h3> Coriander Naan </h3>
 							<p> Price : $2.99 </p>
 						</div>
@@ -170,7 +169,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/butter-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "b_naan">
 							<h3> Butter Naan </h3>
 							<p> Price : $2.99 </p>
 						</div>
@@ -178,7 +177,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/garlic-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "g_naan">
 							<h3> Garlic Naan </h3>
 							<p> Leavened flour flatbread with a hint of garlic to accentuate the taste of any dish. Price : $2.99 </p>
 						</div>
@@ -191,7 +190,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "regP_gulaab">
 							<h3> Gulaab Jamun (2 pcs) (Per Piece) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with two pieces. Price : $2.99 </p>
 						</div>
@@ -199,7 +198,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun-coconut.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "cocoP_gulaab">
 							<h3> Gulaab Jamun with Layered Coconut (Per Piece) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. Price : $1.99 </p>
 						</div>
@@ -207,7 +206,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "regLB_gulaab">
 							<h3> Gulaab Jamun (1 lb) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with one pound. Price : $10.99 </p>
 						</div>
@@ -215,7 +214,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun-coconut.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "cocoLB_gulaab">
 							<h3> Gulaab Jamun with Layered Coconut (1 lb) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with one pound. Price : $12.99 </p>
 						</div>
@@ -223,7 +222,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/milk-cake.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "pMilkCake">
 							<h3> Milk Cake (Per Piece) </h3>
 							<p> Price : $2.49 </p>
 						</div>
@@ -231,7 +230,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/milk-cake.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id ="LBMilkCake">
 							<h3> Milk Cake (1 lb)  </h3>
 							<p> One order comes with one pound. Price : $14.99 </p>
 						</div>
@@ -239,7 +238,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/rasmalai.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<div class="gallery-info">
+						<div class="gallery-info" id = "rasmalai">
 							<h3> Rasmalai (3 pcs)</h3>
 							<p> Made with spongy cottage cheese balls dunked into an aromatic milk syrup. One order comes with three pieces. Price : $5.99 </p>
 						</div>
@@ -250,7 +249,7 @@
 		</div>
 		
 		</div>
-		
+
 		<div class ="box order">
 				<div id="order-title">
 					<b>Order Details</b>
@@ -274,8 +273,6 @@
 			</div>
 		</div>
 		</div>
-
-
 		<footer class="container">
 				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
 				<nav>
@@ -286,8 +283,41 @@
 					</ul>
 				</nav>
 		</footer>
+		<!--Modal Stuff-->
+		<div id="myModal" class="lightbox">
+			<!--Modal Content-->
+			<div class="modal-content">
+				<span class="close">&times;</span>
+				<p>Test modal text</p>
+			</div>
+		</div>
+		<script>
+			var modal = document.getElementById("myModal");
+			//var btn = document.getElementById("mybtn");
+			var span = document.getElementsByClassName("close")[0];
+			var open = document.getElementsByClassName("gallery-info"); //get span element that closes modal --might change
+			//when btn clicked, open modal
+			//open.onclick=function() {
+			for (var i = 0; i < open.length; i++) {
+				open[i].addEventListener("click", function () {
+					//alert(this.id);
+					alert(this.id);
+					modal.style.display = "block";
+				}, false);
+			}
+			//}
+			//When user clicks on <span X, close the modal
+			span.onclick = function(){
+				modal.style.display="none";
+			}
+			//If anywhere outside of modal, close t
+			window.onclick = function(event){
+				if(event.target == modal)
+					modal.style.display="none";
+			}
+		</script>
 
 	</article>
-	</body>
-	
+</body>
+
 </html>

@@ -57,7 +57,7 @@
 				<div class="items">
 				
 					<div class="gallery">
-						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;" ></div>
 						<div class="gallery-info" id = "samosa">
 							<h3> Samosa </h3>
 							<p> Crispy turnovers filled with spiced potatoes and peas.  Price : $1.25 </p>
@@ -283,30 +283,50 @@
 					</ul>
 				</nav>
 		</footer>
+
 		<!--Modal Stuff-->
 		<div id="myModal" class="lightbox">
 			<!--Modal Content-->
 			<div class="modal-content">
+				<img class = "modal-image" id = "myImg" src="">
 				<span class="close">&times;</span>
 				<p>Test modal text</p>
 			</div>
 		</div>
 		<script>
 			var modal = document.getElementById("myModal");
-			//var btn = document.getElementById("mybtn");
+			//get modal image
+			//var img = document.getElementById("theImg");
+
+			var images = document.querySelectorAll(".gallery-image");
+			var img, aImg=[];
+			for( var i=0; i < images.length;i++){
+				img=window.getComputedStyle(images[i]).backgroundImage;
+				//alert(img);
+				//aImg.push('"'+img.substr(33,img.indexOf(")")-1));
+				//get index of res
+				//var index = img.search(/\b(\b/);
+				//aImg.push(img.substring(img.indexOf("(")+1,img.indexOf(")")));
+				var temp = img.split("/");
+				aImg[i] = temp[temp.length-1].substr(0,temp[temp.length-1].length-2);
+
+			}
+			//alert(aImg);
 			var span = document.getElementsByClassName("close")[0];
 			var open = document.getElementsByClassName("gallery-info"); //get span element that closes modal --might change
+			var modalImg = document.getElementById("myImg");
 			//when btn clicked, open modal
-			//open.onclick=function() {
-			for (var i = 0; i < open.length; i++) {
-				open[i].addEventListener("click", function () {
-					//alert(this.id);
-					alert(this.id);
+			var saveIndex;
+			for (let j = 0; j < open.length; j++) {
+				open[j].addEventListener("click", function () {
 					modal.style.display = "block";
+					//alert(aImg[0]);
+					modalImg.src = "res/Food/" + aImg[j];
+					//alert(modalImg.src);
 				}, false);
 			}
 			//}
-			//When user clicks on <span X, close the modal
+			//When user clicks on <span X, close the modal --> replace with add order btn
 			span.onclick = function(){
 				modal.style.display="none";
 			}

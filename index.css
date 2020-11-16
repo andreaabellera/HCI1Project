@@ -82,6 +82,12 @@ header{
     margin:7%;
 }
 
+.promotion{
+    color:whitesmoke;
+    background-color: firebrick;
+    text-align: center;
+}
+
 .login-prompt{
     display: grid;
     align-items: center;

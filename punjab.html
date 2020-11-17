@@ -47,17 +47,50 @@
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
 				<!----TODO: add javascript to exclusion tags-->
-					<input type="checkbox" name ="allergy-option" id="tag">meat
-					<input type="checkbox" name ="allergy-option" id="tag">cooler meat
-					<input type="checkbox" name ="allergy-option" id="tag">gluten
+					<input type="checkbox" name ="allergy-option" onclick="checkAddress(this)" id="meat">meat
+					<input type="checkbox" name ="allergy-option" onclick = "checkAddress(this)" id="c_meat">cooler meat
+					<input type="checkbox" name ="allergy-option" onclick="checkAddress(this)" id="gluten">gluten
 				
 			</div>
+			<!---Exclusion Tag Filtering-->
+			<div class = "filtering">
+				<div class = "filterDev meat c_meat">samosa</div>
+				<div class = "filterDev meat c_meat">golgappa</div>
+				<div class = "filterDev meat c_meat">tikki</div>
+				<div class = "filterDev meat c_meat gluten">fried_rice</div>
+				<div class = "filterDev meat c_meat">v_burger</div>
+				<div class = "filterDev meat c_meat">n_burger</div>
+				<div class = "filterDev c_meat">c_burger</div>
+				<div class = "filterDev c_meat">bc_burger</div>
+				<div class = "filterDev meat c_meat">v_burger_combo</div>
+				<div class = "filterDev meat c_meat">tawa</div>
+				<div class = "filterDev meat c_meat">tandoori</div>
+				<div class = "filterDev meat c_meat">c_naan</div>
+				<div class = "filterDev meat c_meat">b_naan</div>
+				<div class = "filterDev meat c_meat">g_naan</div>
+				<div class = "filterDev meat c_meat">regP_gulab</div>
+				<div class = "filterDev meat c_meat">cocoP_gulab</div>
+				<div class = "filterDev meat c_meat">regLB_gulab</div>
+				<div class = "filterDev meat c_meat">cocoLB_gulab</div>
+				<div class = "filterDev meat c_meat gluten">pMilkCake</div>
+				<div class = "filterDev meat c_meat gluten">LBMilkCake</div>
+				<div class = "filterDev meat c_meat">rasmalai</div>
+			</div>
+			<script>
+				//var filter = document.getElementsByClassName("filtering");
+				//filter.style.display = "none";
+				function checkAddress(checkbox){
+					if(checkbox.checked)
+						alert(checkbox.id); //this is where the sort stuff goes
+				}
+			</script>
 			<div class = "box main">
 				<button type="button" class="collapsible">Snacks</button>
 				<div class="items">
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;" ></div>
+						<!--<div class = "filterDev meat c_meat">samosa</div>-->
 						<div class="gallery-info" id = "samosa">
 							<h3> Samosa </h3>
 							<p> Crispy turnovers filled with spiced potatoes and peas.  Price : $1.25 </p>
@@ -66,6 +99,7 @@
 
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/golgappa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<!--<div class = "filterDev meat c_meat">golgappa</div>-->
 						<div class="gallery-info" id = "golgappa">
 							<h3> Golgappa (7 pcs)</h3>
 							<p> Round hollow puri fried and filled with a mixture of flavoured 

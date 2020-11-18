@@ -46,44 +46,38 @@
 		<div class="box">
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
-				<!----TODO: add javascript to exclusion tags-->
-					<input type="checkbox" name ="allergy-option" onclick="checkAddress(this)" id="meat">meat
-					<input type="checkbox" name ="allergy-option" onclick = "checkAddress(this)" id="c_meat">cooler meat
-					<input type="checkbox" name ="allergy-option" onclick="checkAddress(this)" id="gluten">gluten
-				
+				<!----TODO: might have to refactor this to be a class structure-->
+					<input type="checkbox" name ="allergy-option" id="meat" onclick="exclusionTags('meat')">meat
+					<input type="checkbox" name ="allergy-option" id="cooler" onclick="exclusionTags('cooler')">cooler meat
+					<input type="checkbox" name ="allergy-option" id="gluten" onclick="exclusionTags('gluten')">gluten
 			</div>
-			<!---Exclusion Tag Filtering-->
-			<div class = "filtering">
-				<div class = "filterDev meat c_meat">samosa</div>
-				<div class = "filterDev meat c_meat">golgappa</div>
-				<div class = "filterDev meat c_meat">tikki</div>
-				<div class = "filterDev meat c_meat gluten">fried_rice</div>
-				<div class = "filterDev meat c_meat">v_burger</div>
-				<div class = "filterDev meat c_meat">n_burger</div>
-				<div class = "filterDev c_meat">c_burger</div>
-				<div class = "filterDev c_meat">bc_burger</div>
-				<div class = "filterDev meat c_meat">v_burger_combo</div>
-				<div class = "filterDev meat c_meat">tawa</div>
-				<div class = "filterDev meat c_meat">tandoori</div>
-				<div class = "filterDev meat c_meat">c_naan</div>
-				<div class = "filterDev meat c_meat">b_naan</div>
-				<div class = "filterDev meat c_meat">g_naan</div>
-				<div class = "filterDev meat c_meat">regP_gulab</div>
-				<div class = "filterDev meat c_meat">cocoP_gulab</div>
-				<div class = "filterDev meat c_meat">regLB_gulab</div>
-				<div class = "filterDev meat c_meat">cocoLB_gulab</div>
-				<div class = "filterDev meat c_meat gluten">pMilkCake</div>
-				<div class = "filterDev meat c_meat gluten">LBMilkCake</div>
-				<div class = "filterDev meat c_meat">rasmalai</div>
-			</div>
+
+			<!---JS for Exclusion Tags-->
 			<script>
-				//var filter = document.getElementsByClassName("filtering");
-				//filter.style.display = "none";
-				function checkAddress(checkbox){
-					if(checkbox.checked)
-						alert(checkbox.id); //this is where the sort stuff goes
+				//Global to keep track of which tags clicked
+				function exclusionTags(tag) {//TODO: make this work for multiple checkboxes;
+					//console.log(tag);
+					var items = document.getElementsByClassName("gallery-info");//gives the correct items
+					if(!document.getElementById(tag).checked){
+						for(let i = 0; i < items.length;i++)
+							items[i].style.display='block';
+						return;
+					}
+						var fdev = document.getElementsByClassName("filterDev");//gives the correct filter classes
+						for (let i = 0; i < items.length; i++) {
+							items[i].style.display = 'none';
+							var fDevSplit = fdev[i].className.split(" ");
+							for (let j = 0; j < fDevSplit.length; j++) {
+								if (fDevSplit[j].indexOf(tag) > -1) {
+									items[i].style.display = 'block';
+								}
+							}
+						}
 				}
+				exclusionTags();
+
 			</script>
+
 			<div class = "box main">
 				<button type="button" class="collapsible">Snacks</button>
 				<div class="items">
@@ -91,6 +85,7 @@
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;" ></div>
 						<!--<div class = "filterDev meat c_meat">samosa</div>-->
+						<div class = "filterDev meat cooler" id = "tag">samosa></div>
 						<div class="gallery-info" id = "samosa">
 							<h3> Samosa </h3>
 							<p> Crispy turnovers filled with spiced potatoes and peas.  Price : $1.25 </p>
@@ -100,6 +95,7 @@
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/golgappa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
 						<!--<div class = "filterDev meat c_meat">golgappa</div>-->
+						<div class = "filterDev meat cooler">golgappa</div>
 						<div class="gallery-info" id = "golgappa">
 							<h3> Golgappa (7 pcs)</h3>
 							<p> Round hollow puri fried and filled with a mixture of flavoured 
@@ -109,6 +105,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tikki-chaat.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">tikki</div>
 						<div class="gallery-info" id = "tikki">
 							<h3> Tikki Chaat </h3>
 							<p> Two potato patties smothered with chickpeas curry garnished with diced onions, and 
@@ -118,6 +115,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/fried-rice.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler gluten">fried_rice</div>
 						<div class="gallery-info" id = "fried_rice">
 							<h3> Fried Rice </h3>
 							<p> Basmati rice cooked with mixed vegetables. Price : $8.99 </p>
@@ -132,6 +130,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/vegetable-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">v_burger</div>
 						<div class="gallery-info" id = "v_burger">
 							<h3> Vegetable Burger </h3>
 							<p> Fried potato patty in a bun with lettuce, onion, tomato, and housemade sauces. Price : $6.99 </p>
@@ -140,6 +139,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/noodle-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">n_burger</div>
 						<div class="gallery-info" id = "n_burger">
 							<h3> Noodle Burger </h3>
 							<p> Indian style fried potato patty in a bun with noodles, lettuce, onion, tomato, and housemade sauces. Price : $6.99 </p>
@@ -148,6 +148,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/chicken-burger.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev cooler">c_burger</div>
 						<div class="gallery-info" id = "c_burger">
 							<h3> Chicken Burger </h3>
 							<p> Fried chicken patty in a bun with lettuce, onion, and house made sauces. Price : $6.99 </p>
@@ -156,6 +157,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/butter-chicken-burger.webp'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev cooler">bc_burger</div>
 						<div class="gallery-info" id = "bc_burger">
 							<h3> Butter Chicken Burger </h3>
 							<p> Price : $7.99 </p>
@@ -164,6 +166,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/veggie-burger-fries-drink.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">v_burger_combo</div>
 						<div class="gallery-info" id = "v_burger_combo">
 							<h3> Vegetable Burger with Fries and Drink </h3>
 							<p> Price : $8.99 </p>
@@ -179,6 +182,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tawa-roti.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">tawa</div>
 						<div class="gallery-info" id = "tawa">
 							<h3> Tawa Roti </h3>
 							<p> Price : $0.90 </p>
@@ -187,6 +191,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tandoori-roti.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">tandoori</div>
 						<div class="gallery-info" id = "tandoori">
 							<h3> Tandoori Roti </h3>
 							<p> Price : $1.99 </p>
@@ -195,6 +200,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/coriander-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">c_naan</div>
 						<div class="gallery-info" id = "c_naan">
 							<h3> Coriander Naan </h3>
 							<p> Price : $2.99 </p>
@@ -203,6 +209,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/butter-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">b_naan</div>
 						<div class="gallery-info" id = "b_naan">
 							<h3> Butter Naan </h3>
 							<p> Price : $2.99 </p>
@@ -211,6 +218,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/garlic-naan.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">g_naan</div>
 						<div class="gallery-info" id = "g_naan">
 							<h3> Garlic Naan </h3>
 							<p> Leavened flour flatbread with a hint of garlic to accentuate the taste of any dish. Price : $2.99 </p>
@@ -224,6 +232,7 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">regP_gulab</div>
 						<div class="gallery-info" id = "regP_gulaab">
 							<h3> Gulaab Jamun (2 pcs) (Per Piece) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with two pieces. Price : $2.99 </p>
@@ -232,6 +241,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun-coconut.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">cocoP_gulab</div>
 						<div class="gallery-info" id = "cocoP_gulaab">
 							<h3> Gulaab Jamun with Layered Coconut (Per Piece) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. Price : $1.99 </p>
@@ -240,6 +250,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">regLB_gulab</div>
 						<div class="gallery-info" id = "regLB_gulaab">
 							<h3> Gulaab Jamun (1 lb) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with one pound. Price : $10.99 </p>
@@ -248,6 +259,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/gulaab-jamun-coconut.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">cocoLB_gulab</div>
 						<div class="gallery-info" id = "cocoLB_gulaab">
 							<h3> Gulaab Jamun with Layered Coconut (1 lb) </h3>
 							<p> Soft, spongy, and melt in your mouth milk balls drenched in syrup. One order comes with one pound. Price : $12.99 </p>
@@ -256,6 +268,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/milk-cake.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler gluten">pMilkCake</div>
 						<div class="gallery-info" id = "pMilkCake">
 							<h3> Milk Cake (Per Piece) </h3>
 							<p> Price : $2.49 </p>
@@ -264,6 +277,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/milk-cake.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler gluten">LBMilkCake</div>
 						<div class="gallery-info" id ="LBMilkCake">
 							<h3> Milk Cake (1 lb)  </h3>
 							<p> One order comes with one pound. Price : $14.99 </p>
@@ -272,6 +286,7 @@
 					
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/rasmalai.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
+						<div class = "filterDev meat cooler">rasmalai</div>
 						<div class="gallery-info" id = "rasmalai">
 							<h3> Rasmalai (3 pcs)</h3>
 							<p> Made with spongy cottage cheese balls dunked into an aromatic milk syrup. One order comes with three pieces. Price : $5.99 </p>

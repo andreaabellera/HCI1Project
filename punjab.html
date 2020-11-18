@@ -24,6 +24,16 @@
 			<div class="accountBar">
 				<i class="material-icons">account_circle</i>Account
 			</div>
+			<script>
+				//TODO: accountbar information
+				/*
+					1. dropdown on hover
+					2. static email element
+					3. static address
+					4. settings or edit -- reacts to mouse hover but doesnt link anywhere
+					5. Log out -- links to index.html
+				 */
+			</script>
 		</header>
 		
 		
@@ -39,7 +49,9 @@
 		
 			<button class="back"> <a href="javascript:history.back()"> Back to Restaurants </a></button>
 		</div>
-		
+		<script>
+			//TODO: link restaurant tracker items to the menu classes
+		</script>
 		
 		<div class="center">
 		
@@ -47,35 +59,38 @@
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
 				<!----TODO: might have to refactor this to be a class structure-->
-					<input type="checkbox" name ="allergy-option" id="meat" onclick="exclusionTags('meat')">meat
-					<input type="checkbox" name ="allergy-option" id="cooler" onclick="exclusionTags('cooler')">cooler meat
-					<input type="checkbox" name ="allergy-option" id="gluten" onclick="exclusionTags('gluten')">gluten
+					<input type="checkbox" name ="allergy-option" id="meat" onclick="exclusionTags()">meat
+					<input type="checkbox" name ="allergy-option" id="cooler" onclick="exclusionTags()">cooler meat
+					<input type="checkbox" name ="allergy-option" id="gluten" onclick="exclusionTags()">gluten
 			</div>
 
 			<!---JS for Exclusion Tags-->
 			<script>
-				//Global to keep track of which tags clicked
-				function exclusionTags(tag) {//TODO: make this work for multiple checkboxes;
-					//console.log(tag);
-					var items = document.getElementsByClassName("gallery-info");//gives the correct items
-					if(!document.getElementById(tag).checked){
-						for(let i = 0; i < items.length;i++)
-							items[i].style.display='block';
-						return;
-					}
-						var fdev = document.getElementsByClassName("filterDev");//gives the correct filter classes
-						for (let i = 0; i < items.length; i++) {
-							items[i].style.display = 'none';
-							var fDevSplit = fdev[i].className.split(" ");
-							for (let j = 0; j < fDevSplit.length; j++) {
-								if (fDevSplit[j].indexOf(tag) > -1) {
-									items[i].style.display = 'block';
-								}
+				function exclusionTags() {
+					var tags = ['meat', 'cool', 'gluten'];
+					var items = document.getElementsByClassName("gallery-info");
+					var fDev = document.getElementsByClassName("filterDev");
+					for (let i = 0; i < items.length; i++) {
+						var flag = true;
+						//loop through all the possible elements to check
+						for (let j = 0; j < tags.length; j++) {
+							//loop through all the possible tags
+							if ((fDev[i].className.indexOf(tags[j]) == -1) && document.getElementById(tags[j]).checked) {
+								//if the current element does not have the tag and, the tag's box is checked
+								//i.e. the element doesn't have the 'gluten' tag, but the gluten exclusion box is checked
+								flag = false;
+								//it must be removed
+								items[i].style.display = 'none';
+								break;
 							}
+							//otherwise do nothing
+							//continue the loop until all tags are checked
+							//or until the element is removed
 						}
+						if (flag)
+							items[i].style.display = 'block';
+					}
 				}
-				exclusionTags();
-
 			</script>
 
 			<div class = "box main">
@@ -84,7 +99,6 @@
 				
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;" ></div>
-						<!--<div class = "filterDev meat c_meat">samosa</div>-->
 						<div class = "filterDev meat cooler" id = "tag">samosa></div>
 						<div class="gallery-info" id = "samosa">
 							<h3> Samosa </h3>
@@ -94,7 +108,6 @@
 
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/golgappa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
-						<!--<div class = "filterDev meat c_meat">golgappa</div>-->
 						<div class = "filterDev meat cooler">golgappa</div>
 						<div class="gallery-info" id = "golgappa">
 							<h3> Golgappa (7 pcs)</h3>

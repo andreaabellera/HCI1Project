@@ -68,6 +68,7 @@
 			<script>
 				function exclusionTags() {
 					var tags = ['no_meat', 'no_cooler', 'no_gluten'];
+					var gallery = document.getElementsByClassName("gallery");
 					var items = document.getElementsByClassName("gallery-info");
 					var fDev = document.getElementsByClassName("filterDev");
 					for (let i = 0; i < items.length; i++) {
@@ -80,15 +81,18 @@
 								//i.e. the element doesn't have the 'gluten' tag, but the gluten exclusion box is checked
 								flag = false;
 								//it must be removed
-								items[i].style.display = 'none';
+								//items[i].style.display = 'none';
+								gallery[i].style.display='none';
 								break;
 							}
 							//otherwise do nothing
 							//continue the loop until all tags are checked
 							//or until the element is removed
 						}
-						if (flag)
+						if (flag) {
 							items[i].style.display = 'block';
+							gallery[i].style.display='grid';
+						}
 					}
 				}
 			</script>

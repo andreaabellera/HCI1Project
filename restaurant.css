@@ -39,13 +39,6 @@ header{
 	justify-self:start;
     margin-left: 3%;
 }
-/*.dropdown{
-	position: relative;
-	padding:5% 15%;
-	display: inline-block;
-	justify-self: end;
-	background-color: var(--dark);
-}*/
 .accountBar{
     color:var(--light);
     background-color: var(--dark);
@@ -55,6 +48,7 @@ header{
 	margin-left: auto;
     justify-self: end;
     cursor: pointer;
+	text-align: center;
 }
 
 .dropdownContent{
@@ -63,7 +57,10 @@ header{
 	right:10px;
 	left:10px;
 	font-size: medium;
-	/*text-align: left;*/
+	/*text-align:center;*/
+}
+.dropdownContent .material-icons{
+	float:right;
 }
 .accountBar:hover{
     background-color: #1a2125;
@@ -74,9 +71,7 @@ header{
 	border: 2px solid black;
 	background-color:var(--dark);
 	display:block;
-	text-align: center;
-
-	/*background-color: #1a2125;*/
+	text-align: match-parent;
 }
 
 .container {

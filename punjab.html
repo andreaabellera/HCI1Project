@@ -4,9 +4,10 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Punjab Food Corner</title>
-        <link type="text/css" rel="stylesheet" href="restaurant.css"> <!--ToDO: create seperate CSS for modal-->
+        <link type="text/css" rel="stylesheet" href="restaurant.css">
        <!-- <script src="replaceLater.js"> </script>-->
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<!--<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"  rel="stylesheet">-->
     </head>
 	
 	<body>
@@ -21,10 +22,11 @@
 				<h1> PUNJAB FOOD CORNER </h1>
 			</div>
 
-            <!--<div class="dropdown">-->
                 <div class="accountBar">
                     <i class="material-icons">account_circle</i>Account
                     <div class="dropdownContent">
+						<!--<i class="material-icons custom">settings</i> SETTINGS ICON //TODO: Add tooltip that reacts on hover-->
+						<button title='Settings' class="material-icons custom"> settings</button>
                         <h7><br>Email:
 							<p>example@example.com</p>
 						</h7>
@@ -32,24 +34,8 @@
 							<p>1234 Example St</p>
 						</h7>
 						<button onclick="location.href='index.html';" type="button">Log Out</button>
-						<!--
-						<form action="index.html"> TODO: style this like the buttons
-							<input type="submit" value="Log Out">
-						</form>-->
 					</div>
                 </div>
-          <!-- </div>-->
-			<script>
-				//TODO: accountbar information
-				/*
-					1. dropdown on hover
-					2. static email element
-					3. static address
-					4. settings or edit -- reacts to mouse hover but doesnt link anywhere
-					5. Log out -- links to index.html
-				 */
-
-			</script>
 		</header>
 		
 		

@@ -59,10 +59,11 @@ header{
 .dropdownContent{
 	display: none;
 	position: absolute;
-	right:10px;
-	left:10px;
-	/*border: white;*/
-	text-align: left;
+	/*right:10px;
+	left:10px;*/
+	right:0;
+	font-size: medium;
+	/*text-align: left;*/
 }
 .accountBar:hover{
     background-color: #1a2125;

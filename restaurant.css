@@ -54,21 +54,29 @@ header{
 .dropdownContent{
 	display: none;
 	position: absolute;
-	right:10px;
-	left:10px;
+	margin-top: 10%;
+	right:0.1%;
+	left:0.1%;
+	padding-left: 8%;
 	font-size: medium;
-	/*text-align:center;*/
+	text-align: left;
 }
+
 .dropdownContent .material-icons{
 	float:right;
 }
+
+.dropdownContent button{
+	float:right;
+}
+
 .accountBar:hover{
     background-color: #1a2125;
-    transition: 0.4s;
+    transition: 0.1s;
 }
 
 .accountBar:hover .dropdownContent{
-	border: 2px solid black;
+	border: 2px solid #1a2125;
 	background-color:var(--dark);
 	display:block;
 	text-align: match-parent;

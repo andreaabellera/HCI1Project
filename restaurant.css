@@ -38,19 +38,43 @@ header{
 	justify-self:start;
     margin-left: 3%;
 }
-
+/*.dropdown{
+	position: relative;
+	padding:5% 15%;
+	display: inline-block;
+	justify-self: end;
+	background-color: var(--dark);
+}*/
 .accountBar{
     color:var(--light);
     background-color: var(--dark);
     font-size: large;
-    padding: 5% 15%;
+	position:relative;
+	padding:5% 15%;
+	margin-left: auto;
     justify-self: end;
     cursor: pointer;
+}
+
+.dropdownContent{
+	display: none;
+	position: absolute;
+	right:10px;
+	left:10px;
+	border: white;
 }
 
 .accountBar:hover{
     background-color: #1a2125;
     transition: 0.4s;
+}
+
+.accountBar:hover .dropdownContent{
+	display:block;
+	border: white;
+	text-align: center;
+	background-color:var(--dark);
+	/*background-color: #1a2125;*/
 }
 
 .container {

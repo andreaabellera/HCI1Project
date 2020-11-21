@@ -39,7 +39,7 @@ header{
     justify-self:start;
     margin-left: 3%;
 }
-/*#accountBar{
+#accountBar{
     color:var(--base);
     background-color: var(--text);
     font-size: large;
@@ -49,7 +49,7 @@ header{
     padding-right: 15%;
     justify-self: end;
     cursor: pointer;
-}*/
+}
 
 .accountBar{
     color:var(--base);

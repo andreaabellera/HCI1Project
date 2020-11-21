@@ -36,7 +36,7 @@ header{
     align-items:center;
 }
 
-#accountBar{
+/*#accountBar{
     color:var(--base);
     background-color: var(--text);
     font-size: large;
@@ -51,7 +51,64 @@ header{
 #accountBar:hover{
     background-color: #1a2125;
     transition: 0.4s;
-}   
+}  */
+button{
+    color: var(--light);
+    background-color: var(--accent);
+    font-family: 'Nunito', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    border-color: var(--accent);
+    border-radius: 1em;
+    padding: 2%;
+    margin: 4%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+}
+.accountBar{
+    color:var(--base);
+    background-color: var(--text);
+    font-size: large;
+    position:relative;
+    padding:5% 15%;
+    margin-left: auto;
+    justify-self: end;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dropdownContent{
+    display: none;
+    position: absolute;
+    margin-top: 10%;
+    right:0.1%;
+    left:0.1%;
+    padding-left: 8%;
+    font-size: medium;
+    text-align: left;
+}
+
+.dropdownContent .material-icons{
+    float:right;
+}
+
+.dropdownContent button{
+    float:right;
+}
+
+.accountBar:hover{
+    background-color: #1a2125;
+    transition: 0.1s;
+}
+
+.accountBar:hover .dropdownContent{
+    border: 2px solid #1a2125;
+    background-color:var(--text);
+    display:block;
+    text-align: match-parent;
+}
+
 
 .box{
     border-color: var(--text);

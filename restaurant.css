@@ -187,6 +187,11 @@ button:hover{
 	margin-top: 2%;
 	margin-bottom: 0;
 	margin-left: 1%;
+	cursor: default;
+	transition: none;
+}
+.collapsible:hover {
+	background-color: var(--accent);
 }
 
 .gallery {

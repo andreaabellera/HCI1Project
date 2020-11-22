@@ -88,9 +88,35 @@ function updatePrice(clickedElement){
     document.getElementById("qty").innerHTML=howMany;
     document.getElementById("cost").innerHTML = "$"+(totalPrice*howMany);
 }
+//Process Checked off Options
+/*function processOptions(){
+    var tags = ['calorie-free', 'sodium-free', 'dairy-free'];
+    var mOptions = document.getElementsByClassName("options");
+    for(let i = 0; i < mOptions.length; i++ ){
+
+    }
+}
+//Process Additional Instructions
+function processInstructs(){
+
+}*/
 //TODO: Adding item to the order panel outside of the modal box
 function resolve(){
-    //save all info and add to Order Details section
+    //save all info
+    var quantity = document.getElementById("qty").innerHTML;
+    var price = document.getElementById("cost").innerHTML;
+    var cb = document.getElementsByName("option"); //array of checkboxes
+    var addInstructs = document.getElementById("instructs").value;
+    //check values -- all g
+   /* console.log("Quantity: "+quantity)
+    console.log("Price: "+price)
+    console.log("Instructions: "+addInstructs)*/
+    //receipt
+   var orderDetails = document.getElementById("receipt");
+    var total = document.getElementsByClassName("total")[0];
+    //update receipt
+    total.innerHTML+=price;
+    //console.log(total.innerHTML);
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
     var modal = document.getElementById("myModal");

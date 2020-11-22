@@ -241,6 +241,10 @@ section{
 .qty{
     font-weight: 800;
 }
+.addit{
+	font-size:medium;
+	padding: 2%;
+}
 
 .total {
 	margin: 0;

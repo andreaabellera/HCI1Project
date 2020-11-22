@@ -293,8 +293,10 @@
 				
 			<div id="order-grid">
 				<div class="receipt">
-					Cheese Pizza <span class="qty">(x1)</span> <span class="price">$5</span><br>
-					Sprite <span class="qty">(x1)</span> <span class="price">$5</span><br>
+					Cheese Pizza <span class="qty">(x1)</span><br>
+					<span class="addit">none</span><span class="price">$5</span><br>
+					Sprite <span class="qty">(x1)</span> <br>
+					<span class="addit">none</span> <span class="price">$5</span><br>
 				</div>
 					
 				<hr>
@@ -339,24 +341,24 @@
 					<div class="options">
 						<h1 class="modal-title"> Options </h1> <!--//TODO: save this info and add it to the order outside of lightbox-->
 						<input type="checkbox" name="option" id="calorie-free"> Calorie-free <br>
-						<input type="checkbox" name="option" id="sodium-free"> Sodium-free <br>
-						<input type="checkbox" name="option" id="dairy-free"> Dairy-free
+						<input type="checkbox" name="option" id="sodium-free" > Sodium-free <br>
+						<input type="checkbox" name="option" id="dairy-free" > Dairy-free
 					</div>
 					<div class="additional">
 						<h1 class="modal-title"> Additional Instructions </h1> <!--//TODO: save additional instructions outside of lightbox & add it to order-->
 						<form>
-							<textarea rows="5" cols="80" name="additional-input" placeholder="Specify ingredients to add or omit, food handling, packaging"></textarea>
+							<textarea rows="5" cols="80" name="additional-input" id ="instructs" placeholder="Specify ingredients to add or omit, food handling, packaging"></textarea>
 						</form>
 					</div>
 				</div>
 				<div class="add-to-order"> <!--//TODO: when clicked, update order outside of lightbox-->
-					ADD TO ORDER: <span id="cost" > $1.99 </span>
+					ADD TO ORDER: <span id="cost" onclick="resolve()" > $1.99 </span>
 				</div>
 			</div>
 		</div>
 		<script>
 			getModal();
-			resolve();
+			//resolve();
 		</script>
 
 	</article>

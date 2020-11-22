@@ -69,6 +69,7 @@ function getModal() {
             modal.style.display = "none";
     }
 }
+//For calculating price of item & updating addOrderBtn
 window.addEventListener("storage",updatePrice);
 function updatePrice(clickedElement){
     var id = clickedElement.id;
@@ -86,4 +87,15 @@ function updatePrice(clickedElement){
     }
     document.getElementById("qty").innerHTML=howMany;
     document.getElementById("cost").innerHTML = "$"+(totalPrice*howMany);
+}
+//TODO: Adding item to the order panel outside of the modal box
+function resolve(){
+    //save all info and add to Order Details section
+    //close modal
+    var orderbtn = document.getElementsByClassName("add-to-order")[0];
+    var modal = document.getElementById("myModal");
+    window.onclick=function(event){
+        if(event.target==orderbtn)
+            modal.style.display='none';
+    }
 }

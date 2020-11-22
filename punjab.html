@@ -63,7 +63,6 @@
 		<div class="box">
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
-				<!----TODO: might have to refactor this to be a class structure-->
 					<input type="checkbox" name ="allergy-option" id="no_meat" onclick="exclusionTags()">meat
 					<input type="checkbox" name ="allergy-option" id="no_cooler" onclick="exclusionTags()">cooler meat
 					<input type="checkbox" name ="allergy-option" id="no_gluten" onclick="exclusionTags()">gluten
@@ -331,7 +330,7 @@
 				</div>
 				<div class="modal-left-interface">
 					<img class = "modal-image" id = "myImg" src="">
-					<h1 class="modal-title" id="food-title"></h1> <!--//TODO: update title with item clicked-->
+					<h1 class="modal-title" id="food-title"></h1>
 					<button class="qty-arrow" id="decrease" onclick="updatePrice(this)"> < </button>
 					<span id="qty"> 1 </span>
 					<button class="qty-arrow" id="increase" onclick="updatePrice(this)"> > </button>
@@ -357,6 +356,7 @@
 		</div>
 		<script>
 			getModal();
+			resolve();
 		</script>
 
 	</article>

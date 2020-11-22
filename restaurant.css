@@ -345,7 +345,7 @@ footer{
 }
 
 .modal-left-interface{
-	margin:5%;
+	margin:3%;
 	display: grid;
 	justify-items: center;
 	grid-template-columns: 1fr 20% 1fr;
@@ -356,24 +356,24 @@ footer{
 	border-color: var(--dark);
 	border-style: solid;
 	border-width: thick;
-	width:20em;
-	height:20em;
+	width:14em;
+	height:12em;
 	grid-column: 1/4;
 }
 
 .modal-title{
-	font-size: 200%;
+	font-size: 150%;
 	font-weight: 700;
 	grid-column: 1/4;
 }
 
 textarea{
+	width:80%;
 	max-width:80%;
 }
 
 #qty{
-	margin-top: 3%;
-	font-size: 150%;
+	font-size: 120%;
 	font-weight: 700;
 }
 
@@ -386,7 +386,6 @@ textarea{
 }
 
 .qty-arrow{
-	margin-top: 3%;
 	color: white;
 	background-color: crimson;
 	font-family: 'Poppins', sans-serif;
@@ -397,7 +396,7 @@ textarea{
 }
 
 .modal-right-interface{
-	margin:5%;
+	margin:3%;
 	display: grid;
 	grid-template-rows: 50% 50%;
 }

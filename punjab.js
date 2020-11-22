@@ -29,6 +29,7 @@ function exclusionTags() {
     }
 }
 /*Lightbox*/
+var bp = 0;
 function getModal() {
     var modal = document.getElementById("myModal");
     var images = document.querySelectorAll(".gallery-image");
@@ -44,10 +45,18 @@ function getModal() {
     var open = document.getElementsByClassName("gallery-info");
     var modalImg = document.getElementById("myImg");
     var htags=[];
-    //get all header tags
+    var pricetxt=[];
+    var prices=[];
+    //get all header tags and prices
     for(let j = 0; j < open.length;j++){
         htags[j]=open[j].getElementsByTagName("h3")[0];
+        pricetxt[j]=open[j].getElementsByTagName("p")[0].innerHTML;
+        prices[j]=pricetxt[j].substring(pricetxt[j].indexOf("$")+1);
+        console.log(prices[j]);
+        //prices[j].substring(prices[j].indexOf('$'),prices[j].length);
     }
+
+    //TODO: get base costs of all items
     //when btn clicked, open modal
     for (let k = 0; k < open.length; k++) {
         open[k].addEventListener("click", function () {
@@ -56,10 +65,13 @@ function getModal() {
             modalImg.src = "res/Food/" + aImg[k];
             //set the title of the food item
             document.getElementById("food-title").innerHTML = htags[k].innerHTML;
+            //set prices
+            document.getElementById("cost").innerHTML=prices[k];
+            bp=parseFloat(prices[k]);
         }, false);
     }
     //}
-    //When user clicks on <span X, close the modal //TODO: replace with add order btn
+    //When user clicks on <span X, close the modal
     span.onclick = function () {
         modal.style.display = "none";
     }
@@ -70,23 +82,28 @@ function getModal() {
     }
 }
 //For calculating price of item & updating addOrderBtn
+
 window.addEventListener("storage",updatePrice);
 function updatePrice(clickedElement){
     var id = clickedElement.id;
     var howMany=document.getElementById("qty").innerHTML;
-
-    var totalPrice = 1.99;
+    var totalPrice = parseFloat(document.getElementById("cost").innerHTML);
+   // var totalPrice=parseFloat(preSubstr.substring(preSubstr.indexOf("$")-1));
+    //var totalPrice=1;
+    //var totalPrice=basePrice;
     if(id=="increase"){
-       // totalPrice+=1.99;
+       totalPrice+=bp;
         howMany++;
     }else if(id=="decrease"&&howMany>1){
-        //totalPrice-=1.99;
+        totalPrice-=bp;
         howMany--;
     }else{
         console.log("yikes");
     }
     document.getElementById("qty").innerHTML=howMany;
-    document.getElementById("cost").innerHTML = "$"+(totalPrice*howMany);
+    //document.getElementById("cost").innerHTML = ""+(totalPrice*howMany);//reset the cost
+    console.log(totalPrice);
+    document.getElementById("cost").innerHTML=""+totalPrice;
 }
 //Process Checked off Options
 /*function processOptions(){
@@ -108,14 +125,15 @@ function resolve(){
     var cb = document.getElementsByName("option"); //array of checkboxes
     var addInstructs = document.getElementById("instructs").value;
     //check values -- all g
-   /* console.log("Quantity: "+quantity)
+    console.log("Quantity: "+quantity)
     console.log("Price: "+price)
-    console.log("Instructions: "+addInstructs)*/
+    console.log("Instructions: "+addInstructs)
     //receipt
    var orderDetails = document.getElementById("receipt");
-    var total = document.getElementsByClassName("total")[0];
+   var total = document.getElementsByClassName("total")[0];
+    console.log(total);
     //update receipt
-    total.innerHTML+=price;
+    total.innerHTML+=price; //TODO: update the span element
     //console.log(total.innerHTML);
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
@@ -124,4 +142,5 @@ function resolve(){
         if(event.target==orderbtn)
             modal.style.display='none';
     }
+
 }

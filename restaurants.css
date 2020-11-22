@@ -83,6 +83,52 @@ header{
 
 }
 
+.main {
+	display: grid;
+	grid-template-columns: 15% 85%;
+	color: var(--light);
+}
+
+#filter-div {
+	background-color: var(--dark);
+	border-radius: 1em;
+	margin: 0 5% 5% 5%;
+	padding: 3%;
+	display: grid;
+	grid-template-rows:auto 1fr;
+}
+
+.filter-header {
+	padding: 1%;
+	margin: 5%;
+}
+
+.filter {
+	cursor: pointer;
+	margin: 0;
+	margin-right: 2%;
+	margin-bottom: 2%;
+	padding: 4%;
+	background-color: var(--accent);
+	transition: background-color 0.5s ease;
+}
+
+.filter:hover {
+	background-color: firebrick;
+}
+
+.filter.active {
+	background-color: firebrick;
+}
+
+.filter:first-child {
+	border-radius: 0.5em 0.5em 0 0;
+}
+
+.filter:last-child {
+	border-radius: 0 0 0.5em 0.5em;
+}
+
 .section {
 	color: var(--dark);
 	padding: 0.5em 1em 0.5em 1em;
@@ -93,6 +139,7 @@ header{
 	border-radius: 1em;
 }
 
+
 .clearfix::after {
 	content: "";
 	clear: both;
@@ -100,7 +147,7 @@ header{
 	margin-bottom: 2em;
 }
 
-.row {
+#center {
 	margin: 0;
 	padding: 0;
 }
@@ -115,6 +162,11 @@ header{
 	float: left;
 	transition: opacity 0.5s ease;
 	padding: 0.3em;
+	display: none;
+}
+
+.show {
+	display: block;
 }
 
 img {
@@ -131,8 +183,28 @@ img {
 	cursor:pointer;
 }
 
-.item {
+#item {
 	color: var(--dark);
+}
+
+
+button{
+    color: var(--light);
+    background-color: var(--accent);
+    font-family: 'Nunito', sans-serif;
+    font-size: larger;
+    font-weight: bold;
+    border-color: var(--accent);
+    border-radius: 1em;
+    padding: 2%;
+    margin: 4%;
+	cursor: pointer;
+	transition: background-color 0.3s;
+    
+}
+
+button:hover{
+    background-color: firebrick;
 }
 
 a{

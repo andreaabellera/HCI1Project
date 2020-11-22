@@ -64,3 +64,21 @@ function getModal() {
             modal.style.display = "none";
     }
 }
+window.addEventListener("storage",updatePrice);
+function updatePrice(clickedElement){
+    var id = clickedElement.id;
+    var howMany=document.getElementById("qty").innerHTML;
+
+    var totalPrice = 1.99;
+    if(id=="increase"){
+       // totalPrice+=1.99;
+        howMany++;
+    }else if(id=="decrease"&&howMany>1){
+        //totalPrice-=1.99;
+        howMany--;
+    }else{
+        console.log("yikes");
+    }
+    document.getElementById("qty").innerHTML=howMany;
+    document.getElementById("cost").innerHTML = "$"+(totalPrice*howMany);
+}

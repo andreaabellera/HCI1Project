@@ -176,6 +176,7 @@ button{
     padding-right: 3%;
     padding-top: 2.5%;
     padding-bottom: 2.5%;
+	width: 90%;
 }
 
 button a{
@@ -191,6 +192,7 @@ button:hover{
 
 .wide{
     grid-column: 1/3;
+	width: 104%;
 }
 
 .content{

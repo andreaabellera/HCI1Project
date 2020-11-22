@@ -4,14 +4,12 @@
 	<head>
         <meta charset="utf-8">
         <title>I'm Hungry | Restaurants</title>
-        <link type="text/css" rel="stylesheet" href="restaurants.css">
-        <script src="replaceLater.js"> </script>
+        <link type="text/css" rel="stylesheet" href="restaurantsv2.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
 	<body>
 	<article>
-	
 		<header class="container"> 
 			<div class="logo">
 				<img src="res/Logo/logowhite.png" alt="hungry logo" height=45% width=45%>
@@ -32,71 +30,63 @@
 			<input type = "text" placeholder="Search..." id="search">
 		</div>
 		
-		<div class="center">
-			<div class = "section">
-				<b> Close to you </b>
-			</div>
-			
-			<div class="row">
-			<div class="clearfix">
-			
-			<div class="gallery">
-				<a class="item" href="punjab.html">
-					<img src="res/Restaurants/Punjab Food Corner/logo.png" alt="Logo" width="200" height="200">
-				</a>
-				<div class="desc">Punjab Food Corner</div>
-			</div>
-			
-			<div class="gallery">
-				<a class="item" href="punjab.html">
-					<img src="res/Restaurants/McDonalds/logo.png" alt="Logo" width="200" height="200">
-				</a>
-				<div class="desc">McDonald's</div>
-			</div>
-			
-			<div class="gallery">
-				<a class="item" href="punjab.html">
-					<img src="res/Restaurants/A&W/logo.png" alt="Logo" width="200" height="200">
-				</a>
-				<div class="desc">A&W</div>
-			</div>
-			
-			<div class="gallery">
-				<a class="item" href="punjab.html">
-					<img src="res/Restaurants/Asia Palace/logo.png" alt="Logo" width="200" height="200">
-				</a>
-				<div class="desc">Asia Palace</div>
-			</div>
-			</div>
+		<div class="main">
 		
-			</div>
+		<div id="filter-div">
+			<div class="filter-header">Filters</div>
 			
-			<div class = "section">
-				<b> Recommended </b>
+			<div id="options">
+				<h3 class="filter active" onclick="filterSelection('all')"> All</h3>
+				<h3 class="filter" onclick="filterSelection('close-to')"> Close-to-you</h3>
+				<h3 class="filter" onclick="filterSelection('delivery')"> Delivery</h3>
+				<h3 class="filter" onclick="filterSelection('pick-up')"> Pick-up</h3>
+				<h3 class="filter" onclick="filterSelection('fast-food')"> Fast Food</h3>
+				<h3 class="filter" onclick="filterSelection('burger')"> Burgers</h3>
+				<h3 class="filter" onclick="filterSelection('indian')"> Indian</h3>
+				<h3 class="filter" onclick="filterSelection('chinese')"> Chinese</h3>
 			</div>
-			
-			<div class="row">
+		</div>
+		
+		
+		<div id="center">
+		
 			<div class="clearfix">
 			
-			<!-- don't forget to do the boxes -->
-			</div>
+			<div class="gallery indian burger pick-up delivery punjab">
+			<a id="item" href="punjab.html">
+					<img src="res/Restaurants/Punjab Food Corner/logo.png" alt="Logo" width="200" height="200">
+					<div class="desc">Punjab Food Corner</div>
+			</a>
 			</div>
 			
-			<div class = "section">
-				<b> Categories </b>
+			<div class="gallery fast-food burger delivery pick-up close-to macdonald">
+			<a id="item" href="punjab.html">
+					<img src="res/Restaurants/McDonalds/logo.png" alt="Logo" width="200" height="200">
+					<div class="desc">McDonald's</div>
+			</a>
 			</div>
 			
-			<div class="clearfix">
-			
-			<div class="gallery">
-				<a class="item" href="category.html">
-					<img src="res/Food/double-teen-burger.jpg" alt="Logo" width="200" height="200">
+			<div class="gallery fast-food burger delivery close-to aw">
+				<a id="item" href="punjab.html">
+					<img src="res/Restaurants/A&W/logo.png" alt="Logo" width="200" height="200">
+					<div class="desc">A&W </div>
 				</a>
-				<div class="desc">Burgers</div>
 			</div>
+			
+			<div class="gallery chinese pick-up asiapalace">
+				<a id="item" href="punjab.html">
+					<img src="res/Restaurants/Asia Palace/logo.png" alt="Logo" width="200" height="200">
+					<div class="desc">Asia Palace</div>
+				</a>
+			</div>
+			
 			</div>
 		
 		</div>
+		</div>
+		
+		<script src="restaurantsv2.js"></script>
+		
 		</div>
 		
 
@@ -105,14 +95,14 @@
 				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
 				<nav>
 					<ul>
-						<li><a href="privacypolicy.html">Privacy Policy</a></li>
-						<li><a href="terms.html">Terms and Conditions</a></li>
-						<li><a href="contact.html">Contact us</a></li>
+						<li><a href="#">Privacy Policy</a></li>
+						<li><a href="#">Terms and Conditions</a></li>
+						<li><a href="#">Contact us</a></li>
 					</ul>
 				</nav>
 		</footer>
 
-	</article>
+	</article>	
 	</body>
 
 </html>

@@ -41,20 +41,25 @@ function getModal() {
     }
     //alert(aImg);
     var span = document.getElementsByClassName("close")[0];
-    var open = document.getElementsByClassName("gallery-info"); //get span element that closes modal --might change
+    var open = document.getElementsByClassName("gallery-info");
     var modalImg = document.getElementById("myImg");
+    var htags=[];
+    //get all header tags
+    for(let j = 0; j < open.length;j++){
+        htags[j]=open[j].getElementsByTagName("h3")[0];
+    }
     //when btn clicked, open modal
-    var saveIndex;
-    for (let j = 0; j < open.length; j++) {
-        open[j].addEventListener("click", function () {
+    for (let k = 0; k < open.length; k++) {
+        open[k].addEventListener("click", function () {
             modal.style.display = "block";
             //alert(aImg[0]);
-            modalImg.src = "res/Food/" + aImg[j];
-            //alert(modalImg.src);
+            modalImg.src = "res/Food/" + aImg[k];
+            //set the title of the food item
+            document.getElementById("food-title").innerHTML = htags[k].innerHTML;
         }, false);
     }
     //}
-    //When user clicks on <span X, close the modal --> replace with add order btn
+    //When user clicks on <span X, close the modal //TODO: replace with add order btn
     span.onclick = function () {
         modal.style.display = "none";
     }

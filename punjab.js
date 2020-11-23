@@ -177,7 +177,7 @@ function updatePrice(clickedElement){
     document.getElementById("qty").innerHTML=howMany;
     //document.getElementById("cost").innerHTML = ""+(totalPrice*howMany);//reset the cost
     //console.log(totalPrice);
-    document.getElementById("cost").innerHTML=""+totalPrice;
+    document.getElementById("cost").innerHTML=""+totalPrice.toFixed(2);
 }
 
 function resolve(){
@@ -261,6 +261,6 @@ function updateTotal(){
         receiptTotal+=parseFloat(substr);
         //console.log(items[i].getElementsByClassName("price")[0].innerHTML);
     }
-    document.getElementById("tID").innerHTML="$"+receiptTotal;
+    document.getElementById("tID").innerHTML="$"+receiptTotal.toFixed(2);
     //console.log(receiptTotal);
 }

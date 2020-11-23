@@ -293,16 +293,22 @@
 				
 			<div id="order-grid">
 				<div class="receipt">
-					Cheese Pizza <span class="qty">(x1)</span><br>
+					<!--//TODO: remove items-->
+					<ul class="ulist" id = "list">
+
+					</ul>
+					<!--Cheese Pizza <span class="qty">(x1)</span><br>
 					<span class="addit">none</span><span class="price">$5</span><br>
 					Sprite <span class="qty">(x1)</span> <br>
-					<span class="addit">none</span> <span class="price">$5</span><br>
+					<span class="addit">none</span> <span class="price">$5</span><br>-->
+
 				</div>
 					
 				<hr>
 					
                 <div class="total">
-					<b>Total</b> <span style="float: right;">$10</span> 
+					<!--<b>Total</b> <span style="float: right;">$10</span>-->
+					<b>Total</b> <span style="float: right;" id="tID">0</span>
 				</div>
 			
 				<section>
@@ -351,7 +357,7 @@
 						</form>
 					</div>
 				</div>
-				<div class="add-to-order"> <!--//TODO: when clicked, update order outside of lightbox-->
+				<div class="add-to-order" onclick="resolve()"> <!--//TODO: when clicked, update order outside of lightbox-->
 					ADD TO ORDER: <span id="cost" ></span>
 				</div>
 			</div>

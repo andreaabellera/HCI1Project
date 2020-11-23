@@ -52,11 +52,10 @@ function getModal() {
         htags[j]=open[j].getElementsByTagName("h3")[0];
         pricetxt[j]=open[j].getElementsByTagName("p")[0].innerHTML;
         prices[j]=pricetxt[j].substring(pricetxt[j].indexOf("$")+1);
-        console.log(prices[j]);
+        //console.log(prices[j]);
         //prices[j].substring(prices[j].indexOf('$'),prices[j].length);
     }
 
-    //TODO: get base costs of all items
     //when btn clicked, open modal
     for (let k = 0; k < open.length; k++) {
         open[k].addEventListener("click", function () {
@@ -68,6 +67,7 @@ function getModal() {
             //set prices
             document.getElementById("cost").innerHTML=prices[k];
             bp=parseFloat(prices[k]);
+            document.getElementById("qty").innerHTML=1;
         }, false);
     }
     //}
@@ -82,15 +82,13 @@ function getModal() {
     }
 }
 //For calculating price of item & updating addOrderBtn
-
+//TODO: reset how many for each modal box
 window.addEventListener("storage",updatePrice);
+
 function updatePrice(clickedElement){
     var id = clickedElement.id;
     var howMany=document.getElementById("qty").innerHTML;
     var totalPrice = parseFloat(document.getElementById("cost").innerHTML);
-   // var totalPrice=parseFloat(preSubstr.substring(preSubstr.indexOf("$")-1));
-    //var totalPrice=1;
-    //var totalPrice=basePrice;
     if(id=="increase"){
        totalPrice+=bp;
         howMany++;
@@ -105,36 +103,41 @@ function updatePrice(clickedElement){
     console.log(totalPrice);
     document.getElementById("cost").innerHTML=""+totalPrice;
 }
-//Process Checked off Options
-/*function processOptions(){
-    var tags = ['calorie-free', 'sodium-free', 'dairy-free'];
-    var mOptions = document.getElementsByClassName("options");
-    for(let i = 0; i < mOptions.length; i++ ){
-
-    }
-}
-//Process Additional Instructions
-function processInstructs(){
-
+/*var instructs="";
+function addInstructs(){
+    instructs = document.getElementById('inp').value;
+   alert("set instructs");
 }*/
 //TODO: Adding item to the order panel outside of the modal box
+
 function resolve(){
-    //save all info
-    var quantity = document.getElementById("qty").innerHTML;
-    var price = document.getElementById("cost").innerHTML;
+    //save all info from modal
+    var item = document.getElementById("food-title");
+    var quantity = document.getElementById("qty").textContent;
+    var price = document.getElementById("cost").textContent;
     var cb = document.getElementsByName("option"); //array of checkboxes
-    var addInstructs = document.getElementById("instructs").value;
+    var addInstructs = document.getElementById("instructs").value; //TODO:check
+    var thelist = document.getElementById("list");
+    var listItem = document.createElement("li");
+    listItem.id="listitem";
+    listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span><br>"
+        +"<span class=\"addit\">"+addInstructs+"</span>"
+        +"<span class=\"price\">$"+price+"</span><br>";
+    thelist.appendChild(listItem);
     //check values -- all g
-    console.log("Quantity: "+quantity)
-    console.log("Price: "+price)
-    console.log("Instructions: "+addInstructs)
+    /*console.log("Quantity: "+quantity);
+    console.log("Price: "+price);
+    console.log("Instructions: "+addInstructs);*/
     //receipt
-   var orderDetails = document.getElementById("receipt");
-   var total = document.getElementsByClassName("total")[0];
-    console.log(total);
+   /*var orderDetails = document.getElementById("receipt");
+   //receipt elements
+    var total = document.getElementById("tID");
+    var instructions = document.getElementById("addit");
+    var qty = document.getElementsByClassName("qty");
     //update receipt
-    total.innerHTML+=price; //TODO: update the span element
-    //console.log(total.innerHTML);
+    total.innerHTML="$"+price;
+    qty.innerHTML=quantity;
+    //instructions.innerHTML=addInstructs;*/
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
     var modal = document.getElementById("myModal");

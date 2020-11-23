@@ -204,8 +204,8 @@ function resolve(){
     var thelist = document.getElementById("list");
     var listItem = document.createElement("li");
     listItem.id="listitem";
-    listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span>"
-        +"<span class=\"closeele\">&times;</span><br>"
+    listItem.innerHTML="<b>" + item.innerHTML + "</b> " + "<span class=\"qty\">(x"+quantity+")</span>"
+        +"<span class=\"closeele\">Remove <i class='material-icons'>backspace</i></span><br>"
         +"<span class=\"addit\">"+addInstructs+"<br></span>"
         +"<span class=\"checkbx\">"+cbStr+"</span>"
         +"<span class=\"price\">$"+price+"</span><br>";

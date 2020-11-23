@@ -29,10 +29,13 @@ function exclusionTags() {
     }
 }
 /*Lightbox*/
+//defaults
 var bp = 0;
-//TODO: reset instructions for each modal box
-//TODO: reset checkboxes for each modal box
+//var iDef = document.getElementById("instructs").value="";
+//var qtyDef =  document.getElementById("qty").innerHTML=1+"";
 function getModal() {
+    var baseList = document.getElementById("list");
+    var elements = baseList.getElementsByTagName("li");
     var modal = document.getElementById("myModal");
     var images = document.querySelectorAll(".gallery-image");
     var img, aImg = [];
@@ -66,9 +69,42 @@ function getModal() {
             modalImg.src = "res/Food/" + aImg[k];
             //set the title of the food item
             document.getElementById("food-title").innerHTML = htags[k].innerHTML;
-            //set prices
-            document.getElementById("cost").innerHTML=prices[k];
-            bp=parseFloat(prices[k]);
+
+
+            //if item with name is not in the list or nothing is in the list, modal gets defaults
+            var inList=checkElements(htags[k].innerHTML);
+            if(baseList.length==0 ||inList==null){
+                //set prices
+                document.getElementById("cost").innerHTML=prices[k];
+                bp=parseFloat(prices[k]);
+                document.getElementById("qty").innerHTML=1+"";
+                //reset instructions
+                document.getElementById("instructs").value="";
+                //reset checkboxes
+                var cb = document.getElementsByName("option");
+                cb[0].checked = false;
+                cb[1].checked = false;
+                cb[2].checked = false;
+            }else{
+                //alert("persistence");
+                //TODO: remove old list entry, re-add
+                var pEle = inList.getElementsByClassName("price")[0].innerHTML;
+                document.getElementById("cost").innerHTML = pEle.substring(pEle.indexOf("$")+1);
+                //substring
+                var str = inList.getElementsByClassName("qty")[0].innerHTML;
+                document.getElementById("qty").innerHTML=str.substring(2,str.length-1);
+                var ins = inList.getElementsByClassName("addit")[0].innerHTML;
+                document.getElementById("instructs").value= ins.substring(0,ins.indexOf("<"));
+                var cb = document.getElementsByName("option");
+                var eCb = document.getElementsByClassName("checkbx").innerHTML;//works
+                if(eCb.indexOf(cb[0].innerHTML)>-1)
+                    cb[0].checked=true;
+                if(eCb.indexOf(cb[1].innerHTML)>-1)
+                    cb[1].checked=true;
+                if(eCb.indexOf(cb[2].innerHTML)>-1)
+                    cb[2].checked=true;
+            }
+            /*
             document.getElementById("qty").innerHTML=1+"";
             //reset instructions
            document.getElementById("instructs").value="";
@@ -77,6 +113,8 @@ function getModal() {
             cb[0].checked = false;
             cb[1].checked = false;
             cb[2].checked = false;
+            */
+
         }, false);
     }
     //}
@@ -89,6 +127,19 @@ function getModal() {
         if (event.target == modal)
             modal.style.display = "none";
     }
+}
+function checkElements(eName){
+    var eList = document.getElementById("list");
+    var elements = eList.getElementsByTagName("li");
+    for(let i = 0; elements.length;i++){
+        if(elements[i].innerHTML.indexOf(eName)>-1){
+            //remove this element from the list
+            var save = elements[i]
+             elements[i].remove();
+            return save;
+        }
+    }
+    return null;
 }
 //For calculating price of item & updating addOrderBtn
 window.addEventListener("storage",updatePrice);
@@ -135,7 +186,6 @@ function resolve(){
     var thelist = document.getElementById("list");
     var listItem = document.createElement("li");
     listItem.id="listitem";
-    //TODO: cant remove the first element in the list
     listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span>"
         +"<span class=\"closeele\">&times;</span><br>"
         +"<span class=\"addit\">"+addInstructs+"<br></span>"

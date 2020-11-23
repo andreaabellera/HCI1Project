@@ -111,10 +111,6 @@ function resolve(){
     var quantity = document.getElementById("qty").textContent;
     var price = document.getElementById("cost").textContent;
     var cb = document.getElementsByName("option"); //array of checkboxes
-    //test checkboxes array
-    /*for(let i =0; i < cb.length;i++){
-        console.log(cb[i].innerHTML);
-    }*/
     //find which checkboxes are checked off
     var cbStr="";
     var count=0;
@@ -137,13 +133,30 @@ function resolve(){
         +"<span class=\"checkbx\">"+cbStr+"</span>"
         +"<span class=\"price\">$"+price+"</span><br>";
     thelist.appendChild(listItem);
-
+    updateTotal();
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
     var modal = document.getElementById("myModal");
     window.onclick=function(event){
-        if(event.target==orderbtn)
-            modal.style.display='none';
-    }
+        if(event.target==orderbtn) {
+            modal.style.display = 'none';
 
+        }
+    }
+}
+
+//updates total on order details
+function updateTotal(){
+    //get all list items
+    //var items = document.getElementsByTagName("li"); //should get all elements
+    var thelist = document.getElementById("list");
+    var items=thelist.getElementsByTagName("li");
+    //var receiptTotal=document.getElementById("tID").innerHTML;
+    var receiptTotal=0;
+    for(let i =0; i < items.length;i++){
+        var substr=items[i].getElementsByClassName("price")[0].innerHTML.substring(1);
+        receiptTotal+=parseFloat(substr);
+        //console.log(items[i].getElementsByClassName("price")[0].innerHTML);
+    }
+    document.getElementById("tID").innerHTML="$"+receiptTotal;
 }

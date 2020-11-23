@@ -69,7 +69,13 @@ function getModal() {
             //set prices
             document.getElementById("cost").innerHTML=prices[k];
             bp=parseFloat(prices[k]);
-            document.getElementById("qty").innerHTML=1;
+            document.getElementById("qty").innerHTML=1+"";
+            //reset instructions
+            //reset checkboxes
+            var cb = document.getElementsByName("option");
+            cb[0].checked = false;
+            cb[1].checked = false;
+            cb[2].checked = false;
         }, false);
     }
     //}

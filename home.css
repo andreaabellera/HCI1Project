@@ -119,7 +119,6 @@ header{
     display: grid;
     justify-items: center;
     align-items: center;
-    padding-bottom: 5%;
 }
 
 .hero h1{
@@ -162,6 +161,10 @@ input{
     background-color: firebrick;
     padding-left:2%;
     font-size: large;
+    padding-top: 3%;
+    padding-bottom: 3%;
+    display:grid;
+    grid-template-columns: 50% 50%;
 }
 
 .another-promo h1{
@@ -175,6 +178,23 @@ input{
     color:crimson;
     padding-left:2%;
     font-size: large;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    display:grid;
+    grid-template-columns: 50% 50%;
+}
+
+.promo-text{
+    margin:3%;
+}
+
+.another-promo a{
+    color: mediumblue;
+}
+
+.another-promo a:hover{
+    color: cornflowerblue;
+    cursor: pointer;
 }
 
 .membership h1{

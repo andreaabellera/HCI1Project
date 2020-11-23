@@ -146,32 +146,6 @@ function resolve(){
             updateRecieptItems();
         }//event target
     }//mouse event
-    //REMOVES LIST ITEM WHEN LIST ITEM CLICKED
-    /*listItem.onclick = function() {
-        this.parentNode.removeChild(this);
-        // or this.remove(); if supported
-    }*/
-   /* var remove=function(){
-        //this.parentNode.remove();
-       var item = this.closest('li');
-       item.remove();
-      // var list = this.closest("ul");
-      // list.removeChild(item);
-        console.log("removing node--updatetotal");
-        //console.log(list.length);
-        updateTotal();
-        //this.parentNode.parentNode.removeChild(this.parentNode);
-    }*/
-    //use the list
-
-        /*btn[i].onclick = function () {
-            var close = this.closest("li");
-            //close.parentNode.removeChild(close);
-            close.remove();
-            i++;
-        }*/
-
-    //console.log("list size after removal: "+thelist.length);
 }//resolve method
 
 function updateRecieptItems(){

@@ -71,6 +71,7 @@ function getModal() {
             bp=parseFloat(prices[k]);
             document.getElementById("qty").innerHTML=1+"";
             //reset instructions
+           document.getElementById("instructs").value="";
             //reset checkboxes
             var cb = document.getElementsByName("option");
             cb[0].checked = false;

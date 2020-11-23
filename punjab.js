@@ -30,6 +30,8 @@ function exclusionTags() {
 }
 /*Lightbox*/
 var bp = 0;
+//TODO: reset instructions for each modal box
+//TODO: reset checkboxes for each modal box
 function getModal() {
     var modal = document.getElementById("myModal");
     var images = document.querySelectorAll(".gallery-image");
@@ -82,7 +84,6 @@ function getModal() {
     }
 }
 //For calculating price of item & updating addOrderBtn
-//TODO: reset how many for each modal box
 window.addEventListener("storage",updatePrice);
 
 function updatePrice(clickedElement){
@@ -103,12 +104,6 @@ function updatePrice(clickedElement){
     console.log(totalPrice);
     document.getElementById("cost").innerHTML=""+totalPrice;
 }
-/*var instructs="";
-function addInstructs(){
-    instructs = document.getElementById('inp').value;
-   alert("set instructs");
-}*/
-//TODO: Adding item to the order panel outside of the modal box
 
 function resolve(){
     //save all info from modal
@@ -116,28 +111,33 @@ function resolve(){
     var quantity = document.getElementById("qty").textContent;
     var price = document.getElementById("cost").textContent;
     var cb = document.getElementsByName("option"); //array of checkboxes
+    //test checkboxes array
+    /*for(let i =0; i < cb.length;i++){
+        console.log(cb[i].innerHTML);
+    }*/
+    //find which checkboxes are checked off
+    var cbStr="";
+    var count=0;
+    for(let i = 0; i < cb.length;i++){
+        if(cb[i].checked) {
+            console.log(cb[i].innerHTML);
+            count++;
+            if(count==1)
+                cbStr+=cb[i].getAttribute("id");
+            else
+                cbStr+=", "+cb[i].getAttribute("id");
+        }
+    }
     var addInstructs = document.getElementById("instructs").value; //TODO:check
     var thelist = document.getElementById("list");
     var listItem = document.createElement("li");
     listItem.id="listitem";
     listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span><br>"
-        +"<span class=\"addit\">"+addInstructs+"</span>"
+        +"<span class=\"addit\">"+addInstructs+"<br></span>"
+        +"<span class=\"checkbx\">"+cbStr+"</span>"
         +"<span class=\"price\">$"+price+"</span><br>";
     thelist.appendChild(listItem);
-    //check values -- all g
-    /*console.log("Quantity: "+quantity);
-    console.log("Price: "+price);
-    console.log("Instructions: "+addInstructs);*/
-    //receipt
-   /*var orderDetails = document.getElementById("receipt");
-   //receipt elements
-    var total = document.getElementById("tID");
-    var instructions = document.getElementById("addit");
-    var qty = document.getElementsByClassName("qty");
-    //update receipt
-    total.innerHTML="$"+price;
-    qty.innerHTML=quantity;
-    //instructions.innerHTML=addInstructs;*/
+
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
     var modal = document.getElementById("myModal");

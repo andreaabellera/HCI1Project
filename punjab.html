@@ -351,13 +351,13 @@
 						<input type="checkbox" name="option" id="dairy-free" > Dairy-free
 					</div>
 					<div class="additional">
-						<h1 class="modal-title"> Additional Instructions </h1> <!--//TODO: save additional instructions outside of lightbox & add it to order-->
+						<h1 class="modal-title"> Additional Instructions </h1> <!--//TODO: instructions are not persistent between different modals-->
 						<form>
 							<textarea rows="5" cols="80" name="additional-input" id ="instructs" placeholder="Specify ingredients to add or omit, food handling, packaging"></textarea>
 						</form>
 					</div>
 				</div>
-				<div class="add-to-order" onclick="resolve()"> <!--//TODO: when clicked, update order outside of lightbox-->
+				<div class="add-to-order" onclick="resolve()">
 					ADD TO ORDER: <span id="cost" ></span>
 				</div>
 			</div>

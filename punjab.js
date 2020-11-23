@@ -53,7 +53,9 @@ function getModal() {
     var pricetxt=[];
     var prices=[];
     //get all header tags and prices
+    //var wasChecked;
     for(let j = 0; j < open.length;j++){
+        //wasChecked = htags[j];
         htags[j]=open[j].getElementsByTagName("h3")[0];
         pricetxt[j]=open[j].getElementsByTagName("p")[0].innerHTML;
         prices[j]=pricetxt[j].substring(pricetxt[j].indexOf("$")+1);
@@ -69,14 +71,16 @@ function getModal() {
             modalImg.src = "res/Food/" + aImg[k];
             //set the title of the food item
             document.getElementById("food-title").innerHTML = htags[k].innerHTML;
-
-
             //if item with name is not in the list or nothing is in the list, modal gets defaults
-            var inList=checkElements(htags[k].innerHTML);
-            if(baseList.length==0 ||inList==null){
+            //pass in item clicked on
+           // var inList=checkElements(htags[k].innerHTML);
+            //var inList=checkElements(wasChecked);
+            var inList=checkElements(document.getElementById("food-title").innerHTML);
+            bp=parseFloat(prices[k]);
+            if(baseList.length==0||inList==null){
                 //set prices
                 document.getElementById("cost").innerHTML=prices[k];
-                bp=parseFloat(prices[k]);
+
                 document.getElementById("qty").innerHTML=1+"";
                 //reset instructions
                 document.getElementById("instructs").value="";
@@ -131,16 +135,29 @@ function getModal() {
 function checkElements(eName){
     var eList = document.getElementById("list");
     var elements = eList.getElementsByTagName("li");
-    for(let i = 0; elements.length;i++){
+    for(let i = 0; i<elements.length;i++){
+        console.log(elements[i].innerHTML);
+        if(elements[i].innerHTML.indexOf(eName)>-1){
+            alert("persistence");
+            //return elements[i];
+           /* var save = elements[i]
+            elements[i].remove();
+            return save;*/
+            return elements[i];
+        }
+        /*console.log(elements[i].innerHTML);
         if(elements[i].innerHTML.indexOf(eName)>-1){
             //remove this element from the list
-            var save = elements[i]
+            alert("persistence");
+            //return elements[i];
+           var save = elements[i]
              elements[i].remove();
             return save;
-        }
+        }*/
     }
     return null;
 }
+
 //For calculating price of item & updating addOrderBtn
 window.addEventListener("storage",updatePrice);
 
@@ -159,13 +176,14 @@ function updatePrice(clickedElement){
     }
     document.getElementById("qty").innerHTML=howMany;
     //document.getElementById("cost").innerHTML = ""+(totalPrice*howMany);//reset the cost
-    console.log(totalPrice);
+    //console.log(totalPrice);
     document.getElementById("cost").innerHTML=""+totalPrice;
 }
 
 function resolve(){
     //save all info from modal
     var item = document.getElementById("food-title");
+    var oldItemName = item.innerHTML;
     var quantity = document.getElementById("qty").textContent;
     var price = document.getElementById("cost").textContent;
     var cb = document.getElementsByName("option"); //array of checkboxes
@@ -191,7 +209,7 @@ function resolve(){
         +"<span class=\"addit\">"+addInstructs+"<br></span>"
         +"<span class=\"checkbx\">"+cbStr+"</span>"
         +"<span class=\"price\">$"+price+"</span><br>";
-    thelist.appendChild(listItem);
+
    // var span = document.getElementsByClassName("closeele")[0];
     //updateTotal();
     //close modal
@@ -200,13 +218,20 @@ function resolve(){
     window.onclick = function (event) {
         if (event.target == orderbtn) {
             modal.style.display = 'none';
+            var ele = checkElements(oldItemName);
+            if(ele!=null)
+                ele.remove();
+            //updateRecieptItems();
+            thelist.appendChild(listItem);
             updateRecieptItems();
+
+
         }//event target
     }//mouse event
 }//resolve method
 
 function updateRecieptItems(){
-    console.log("calling updatetotal()");
+   // console.log("calling updatetotal()");
     updateTotal();
     var thelist = document.getElementById("list");
     var items=thelist.getElementsByTagName("li");
@@ -234,8 +259,8 @@ function updateTotal(){
     for(let i = 0; i < items.length;i++){
         var substr=items[i].getElementsByClassName("price")[0].innerHTML.substring(1);
         receiptTotal+=parseFloat(substr);
-        console.log(items[i].getElementsByClassName("price")[0].innerHTML);
+        //console.log(items[i].getElementsByClassName("price")[0].innerHTML);
     }
     document.getElementById("tID").innerHTML="$"+receiptTotal;
-    console.log(receiptTotal);
+    //console.log(receiptTotal);
 }

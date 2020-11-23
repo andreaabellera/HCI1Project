@@ -234,40 +234,47 @@ section{
 	height: 21.45em;
 	overflow: auto;
 }
- ul.ulist{
+
+ul.ulist{
 	list-style: none;
-	margin: 0;
+	margin-left:5%;
+	margin-right:5%;
 	padding: 0;
 }
+
 li.ulist{
 	float:left;
 	text-align: left;
 }
-/*.list ul{
-	list-style-type: none;
-}*/
+
+.closeele{
+	color:lightgrey;
+	float:right;
+}
+
+.closeele:hover{
+	color:tomato;
+	cursor:pointer;
+	transition:0.2s;
+}
 
 .price{
     float:right;
 }
 
- .qty{
+.qty{
     font-weight: 800;
 }
- .addit{
+
+.addit{
 	font-size:medium;
 	padding: 2%;
 }
- .checkbx{
-	 font-size: medium;
-	 padding:2%;
- }
- .closeele{
-	 margin-left:2%;
-	 color: black;
-	 font-size:1em;
-	 font-weight: bold;
- }
+
+.checkbx{
+	font-size: medium;
+	padding:2%;
+}
 
 .total {
 	margin: 0;
@@ -446,5 +453,4 @@ textarea{
 	cursor:pointer;
 	transition: 0.3s;
 }
-
 

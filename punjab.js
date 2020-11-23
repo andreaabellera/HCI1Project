@@ -128,7 +128,8 @@ function resolve(){
     var thelist = document.getElementById("list");
     var listItem = document.createElement("li");
     listItem.id="listitem";
-    listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span><br>"
+    //TODO: cant remove the first element in the list
+    listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span>"
         +"<span class=\"closeele\">&times;</span><br>"
         +"<span class=\"addit\">"+addInstructs+"<br></span>"
         +"<span class=\"checkbx\">"+cbStr+"</span>"
@@ -142,6 +143,7 @@ function resolve(){
     window.onclick = function (event) {
         if (event.target == orderbtn) {
             modal.style.display = 'none';
+            updateRecieptItems();
         }//event target
     }//mouse event
     //REMOVES LIST ITEM WHEN LIST ITEM CLICKED
@@ -149,36 +151,47 @@ function resolve(){
         this.parentNode.removeChild(this);
         // or this.remove(); if supported
     }*/
-    var remove=function(){
-        this.parentNode.remove();
+   /* var remove=function(){
+        //this.parentNode.remove();
+       var item = this.closest('li');
+       item.remove();
+      // var list = this.closest("ul");
+      // list.removeChild(item);
         console.log("removing node--updatetotal");
+        //console.log(list.length);
         updateTotal();
         //this.parentNode.parentNode.removeChild(this.parentNode);
-    }
+    }*/
     //use the list
-    var items=thelist.getElementsByTagName("li");
-    var btn = thelist.getElementsByTagName("span"); //get all span elements
-    for(let i =0; i < items.length;i++){
-        btn[i].addEventListener("click",remove,false);
-    }
-    console.log("calling updatetotal()");
-    updateTotal();
 
+        /*btn[i].onclick = function () {
+            var close = this.closest("li");
+            //close.parentNode.removeChild(close);
+            close.remove();
+            i++;
+        }*/
+
+    //console.log("list size after removal: "+thelist.length);
 }//resolve method
 
-
-//remove an item from the ul and update the total
-/*function removeItem(item){
-    var list=document.getElementById("list");
-    var elements = list.getElementsByTagName("li");
-    //find the element to remove
-    for(let i = 0; i < elements.length;i++){
-        if(elements[i].innerHTML==item.innerHTML){
-            list.removeChild(elements[i]);
-            updateTotal();
-        }
+function updateRecieptItems(){
+    console.log("calling updatetotal()");
+    updateTotal();
+    var thelist = document.getElementById("list");
+    var items=thelist.getElementsByTagName("li");
+    var btn = thelist.getElementsByClassName("closeele");
+    //set eventListener
+    for(let i = items.length-1; i >= 0; i--) {//add an event listener to
+        btn[i].addEventListener("click", remove);
     }
-}*/
+}
+
+function remove(){
+    var item = this.closest('li');
+    item.remove();
+    updateTotal();
+}
+
 //updates total on order details
 function updateTotal(){
     //get all list items

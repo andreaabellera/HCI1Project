@@ -262,6 +262,12 @@ li.ulist{
 	 font-size: medium;
 	 padding:2%;
  }
+ .closeele{
+	 margin-left:2%;
+	 color: black;
+	 font-size:1em;
+	 font-weight: bold;
+ }
 
 .total {
 	margin: 0;

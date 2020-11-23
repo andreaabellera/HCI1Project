@@ -129,22 +129,51 @@ function resolve(){
     var listItem = document.createElement("li");
     listItem.id="listitem";
     listItem.innerHTML=item.innerHTML+" "+"<span class=\"qty\">(x"+quantity+")</span><br>"
+        +"<span class=\"closeele\">&times;</span><br>"
         +"<span class=\"addit\">"+addInstructs+"<br></span>"
         +"<span class=\"checkbx\">"+cbStr+"</span>"
         +"<span class=\"price\">$"+price+"</span><br>";
     thelist.appendChild(listItem);
+   // var span = document.getElementsByClassName("closeele")[0];
     updateTotal();
     //close modal
     var orderbtn = document.getElementsByClassName("add-to-order")[0];
     var modal = document.getElementById("myModal");
-    window.onclick=function(event){
-        if(event.target==orderbtn) {
+    window.onclick = function (event) {
+        if (event.target == orderbtn) {
             modal.style.display = 'none';
+        }//event target
+    }//mouse event
+    //REMOVES LIST ITEM WHEN LIST ITEM CLICKED
+    /*listItem.onclick = function() {
+        this.parentNode.removeChild(this);
+        // or this.remove(); if supported
+    }*/
+    var remove=function(){
+        this.parentNode.remove();
+    }
+    //use the list
+    var items=thelist.getElementsByTagName("li");
+    var btn = thelist.getElementsByTagName("span"); //get all span elements
+    for(let i =0; i < items.length;i++){
+        btn[i].addEventListener("click",remove,false);
+    }
+    updateTotal();
+}//resolve method
 
+
+//remove an item from the ul and update the total
+/*function removeItem(item){
+    var list=document.getElementById("list");
+    var elements = list.getElementsByTagName("li");
+    //find the element to remove
+    for(let i = 0; i < elements.length;i++){
+        if(elements[i].innerHTML==item.innerHTML){
+            list.removeChild(elements[i]);
+            updateTotal();
         }
     }
-}
-
+}*/
 //updates total on order details
 function updateTotal(){
     //get all list items

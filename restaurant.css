@@ -232,11 +232,35 @@ section{
 	text-align: center;
 }
 
-.receipt {
+.receipt{
+	list-style-type: none;
 	margin: 0;
-	padding: 5%;
+	padding: 0;
 	height: 21.45em;
 	overflow: auto;
+}
+
+ul.ulist{
+	list-style: none;
+	margin-left:5%;
+	margin-right:5%;
+	padding: 0;
+}
+
+li.ulist{
+	float:left;
+	text-align: left;
+}
+
+.closeele{
+	color:lightgrey;
+	float:right;
+}
+
+.closeele:hover{
+	color:tomato;
+	cursor:pointer;
+	transition:0.2s;
 }
 
 .price{
@@ -245,6 +269,16 @@ section{
 
 .qty{
     font-weight: 800;
+}
+
+.addit{
+	font-size:medium;
+	padding: 2%;
+}
+
+.checkbx{
+	font-size: medium;
+	padding:2%;
 }
 
 .total {
@@ -260,25 +294,31 @@ section{
 	width: 80%;
 }
 
-.copyright {
+.copyright{
+	list-style-type:none;
 	margin-top: 2.5%; 
 	justify-self: left; 
 	margin-left: 2%;
 }
+/*.nav{
+	width: 120%;
+	list-style: none;
+	margin: 0;
+	margin-top: 2%;
 
-ul{
+}*/
+ .container ul{
     width: 120%;
     list-style: none;
 	margin: 0;
 	margin-top: 2%;
 }
 
-li{
+  .container li{
     float:left;
 	margin: 0;
     margin-left: 5%;
 }
-
 footer{
     color:var(--light);
     background-color: var(--dark);
@@ -417,5 +457,4 @@ textarea{
 	cursor:pointer;
 	transition: 0.3s;
 }
-
 

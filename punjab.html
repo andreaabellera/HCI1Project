@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>I'm Hungry | Punjab Food Corner</title>
         <link type="text/css" rel="stylesheet" href="restaurant.css">
-       <!-- <script src="replaceLater.js"> </script>-->
+		<script src="punjab.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 	
@@ -55,65 +55,18 @@
 			<a href = "#sweets">
 				<h3 class="tracker">Sweets</h3>
 			</a>
-			<!--OPTION 2: HEADERS HAVE LINKS
-			<h3 class="tracker">Snacks-
-				<a href = "#snacks">Go</a>
-			</h3>
-			<h3 class="tracker">Burgers</h3>
-			<h3 class="tracker">Bread</h3>
-			<h3 class="tracker">Sweets</h3>
-			--->
 		
 			 <a href="javascript:history.back()"><button class="back">Back to Restaurants</button> </a>
 		</div>
-		<script>
-			//TODO: link restaurant tracker items to the menu classes
-		</script>
 		
 		<div class="center">
-		
 		<div class="box">
 			<div id = "exclusion-tags">
 				<b><span style="margin-right:2%;">Exclude</span></b>
-				<!----TODO: might have to refactor this to be a class structure-->
 					<input type="checkbox" name ="allergy-option" id="no_meat" onclick="exclusionTags()">meat
 					<input type="checkbox" name ="allergy-option" id="no_cooler" onclick="exclusionTags()">cooler meat
 					<input type="checkbox" name ="allergy-option" id="no_gluten" onclick="exclusionTags()">gluten
 			</div>
-
-			<!---JS for Exclusion Tags-->
-			<script>
-				function exclusionTags() {
-					var tags = ['no_meat', 'no_cooler', 'no_gluten'];
-					var gallery = document.getElementsByClassName("gallery");
-					var items = document.getElementsByClassName("gallery-info");
-					var fDev = document.getElementsByClassName("filterDev");
-					for (let i = 0; i < items.length; i++) {
-						var flag = true;
-						//loop through all the possible elements to check
-						for (let j = 0; j < tags.length; j++) {
-							//loop through all the possible tags
-							if ((fDev[i].className.indexOf(tags[j]) == -1) && document.getElementById(tags[j]).checked) {
-								//if the current element does not have the tag and, the tag's box is checked
-								//i.e. the element doesn't have the 'gluten' tag, but the gluten exclusion box is checked
-								flag = false;
-								//it must be removed
-								//items[i].style.display = 'none';
-								gallery[i].style.display='none';
-								break;
-							}
-							//otherwise do nothing
-							//continue the loop until all tags are checked
-							//or until the element is removed
-						}
-						if (flag) {
-							items[i].style.display = 'block';
-							gallery[i].style.display='grid';
-						}
-					}
-				}
-			</script>
-
 			<div class = "box main">
 				<button type="button" class="collapsible" id = "snacks">Snacks</button>
 				<div class="items">
@@ -121,7 +74,7 @@
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/samosa.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;" ></div>
 						<div class = "filterDev no_meat no_cooler" id = "tag">samosa></div>
-						<div class="gallery-info" id = "samosa">
+						<div class="gallery-info" id = "samosa"  >
 							<h3> Samosa </h3>
 							<p> Crispy turnovers filled with spiced potatoes and peas.  Price : $1.25 </p>
 						</div>
@@ -140,7 +93,7 @@
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/tikki-chaat.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
 						<div class = "filterDev no_meat no_cooler">tikki</div>
-						<div class="gallery-info" id = "tikki">
+						<div class="gallery-info" id = "tikki" >
 							<h3> Tikki Chaat </h3>
 							<p> Two potato patties smothered with chickpeas curry garnished with diced onions, and 
 							sliced carrots drizzled with tamarind sauce and mint chutney. Price : $6.99 </p>
@@ -150,7 +103,7 @@
 					<div class="gallery">
 						<div class="gallery-image" style="background-image: url('res/Food/fried-rice.jpg'); background-size: cover; background-repeat:none; border-radius: 1em;"></div>
 						<div class = "filterDev no_meat no_cooler no_gluten">fried_rice</div>
-						<div class="gallery-info" id = "fried_rice">
+						<div class="gallery-info" id = "fried_rice" >
 							<h3> Fried Rice </h3>
 							<p> Basmati rice cooked with mixed vegetables. Price : $8.99 </p>
 						</div>
@@ -340,14 +293,22 @@
 				
 			<div id="order-grid">
 				<div class="receipt">
-					Cheese Pizza <span class="qty">(x1)</span> <span class="price">$5</span><br>
-					Sprite <span class="qty">(x1)</span> <span class="price">$5</span><br>
+					<!--//TODO: remove items-->
+					<ul class="ulist" id = "list">
+
+					</ul>
+					<!--Cheese Pizza <span class="qty">(x1)</span><br>
+					<span class="addit">none</span><span class="price">$5</span><br>
+					Sprite <span class="qty">(x1)</span> <br>
+					<span class="addit">none</span> <span class="price">$5</span><br>-->
+
 				</div>
 					
 				<hr>
 					
                 <div class="total">
-					<b>Total</b> <span style="float: right;">$10</span> 
+					<!--<b>Total</b> <span style="float: right;">$10</span>-->
+					<b>Total</b> <span style="float: right;" id="tID">0</span>
 				</div>
 			
 				<section>
@@ -373,77 +334,37 @@
 			<div class="modal-content">
 				<div class="top-bar">
 					<span class="close">&times;</span>
-					<span class=info><i class="material-icons"> info </i></span>
+					<span title='info' class="info" ><i class="material-icons">info </i></span>
 				</div>
 				<div class="modal-left-interface">
 					<img class = "modal-image" id = "myImg" src="">
-					<h1 class="modal-title" id="food-title"> Samosa </h1>
-					<button class="qty-arrow" id="decrease"> < </button>
+					<h1 class="modal-title" id="food-title"></h1>
+					<button class="qty-arrow" id="decrease" onclick="updatePrice(this)"> < </button>
 					<span id="qty"> 1 </span>
-					<button class="qty-arrow" id="increase"> > </button>
+					<button class="qty-arrow" id="increase" onclick="updatePrice(this)"> > </button>
 				</div>
 				<div class="modal-right-interface">
 					<div class="options">
 						<h1 class="modal-title"> Options </h1>
 						<input type="checkbox" name="option" id="calorie-free"> Calorie-free <br>
-						<input type="checkbox" name="option" id="sodium-free"> Sodium-free <br>
-						<input type="checkbox" name="option" id="dairy-free"> Dairy-free
+						<input type="checkbox" name="option" id="sodium-free" > Sodium-free <br>
+						<input type="checkbox" name="option" id="dairy-free" > Dairy-free
 					</div>
 					<div class="additional">
 						<h1 class="modal-title"> Additional Instructions </h1>
 						<form>
-							<textarea rows="5" cols="80" name="additional-input" placeholder="Specify ingredients to add or omit, food handling, packaging"></textarea>
+							<textarea rows="5" cols="80" name="additional-input" id ="instructs" placeholder="Specify ingredients to add or omit, food handling, packaging"></textarea>
 						</form>
 					</div>
 				</div>
-				<div class="add-to-order">
-					ADD TO ORDER: <span id="cost"> $1.99 </span>
+				<div class="add-to-order" onclick="resolve()">
+					ADD TO ORDER: <span id="cost" ></span>
 				</div>
 			</div>
 		</div>
-
 		<script>
-			var modal = document.getElementById("myModal");
-			//get modal image
-			//var img = document.getElementById("theImg");
-
-			var images = document.querySelectorAll(".gallery-image");
-			var img, aImg=[];
-			for( var i=0; i < images.length;i++){
-				img=window.getComputedStyle(images[i]).backgroundImage;
-				//alert(img);
-				//aImg.push('"'+img.substr(33,img.indexOf(")")-1));
-				//get index of res
-				//var index = img.search(/\b(\b/);
-				//aImg.push(img.substring(img.indexOf("(")+1,img.indexOf(")")));
-				var temp = img.split("/");
-				aImg[i] = temp[temp.length-1].substr(0,temp[temp.length-1].length-2);
-
-			}
-			//alert(aImg);
-			var span = document.getElementsByClassName("close")[0];
-			var open = document.getElementsByClassName("gallery-info"); //get span element that closes modal --might change
-			var modalImg = document.getElementById("myImg");
-			//when btn clicked, open modal
-			var saveIndex;
-			for (let j = 0; j < open.length; j++) {
-				open[j].addEventListener("click", function () {
-					modal.style.display = "block";
-					//alert(aImg[0]);
-					modalImg.src = "res/Food/" + aImg[j];
-					//alert(modalImg.src);
-				}, false);
-			}
-			//}
-			//When user clicks on <span X, close the modal --> replace with add order btn
-			span.onclick = function(){
-				modal.style.display="none";
-			}
-			//If anywhere outside of modal, close t
-			window.onclick = function(event){
-				if(event.target == modal)
-					modal.style.display="none";
-			}
+			getModal();
+			//resolve();
 		</script>
 
 	</article>

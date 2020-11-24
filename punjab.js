@@ -138,7 +138,7 @@ function checkElements(eName){
     for(let i = 0; i<elements.length;i++){
         console.log(elements[i].innerHTML);
         if(elements[i].innerHTML.indexOf(eName)>-1){
-            alert("persistence");
+            //alert("persistence");
             //return elements[i];
            /* var save = elements[i]
             elements[i].remove();

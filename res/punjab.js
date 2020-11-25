@@ -68,7 +68,7 @@ function getModal() {
         open[k].addEventListener("click", function () {
             modal.style.display = "block";
             //alert(aImg[0]);
-            modalImg.src = "res/Food/" + aImg[k];
+            modalImg.src = "Food/" + aImg[k];
             //set the title of the food item
             document.getElementById("food-title").innerHTML = htags[k].innerHTML;
             //if item with name is not in the list or nothing is in the list, modal gets defaults

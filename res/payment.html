@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>I'm Hungry | Crave no longer, we deliver</title>
+        <link type="text/css" rel="stylesheet" href="payment.css">
+        <script src="payment.js"> </script>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    </head>
+
+    <body>
+        <article>
+            <header class="container pattern-vertical-stripes-xl">
+                <div class ="grid-left">
+                    <a href = "home.html"><img src="Logo/logowhite.png" height=40% width=40%></img></a>
+                </div>
+                <div class="headertext">
+                    <h1>PAYMENT</h1>
+                </div>
+                <div class="accountBar">
+                    <i class="material-icons">account_circle</i>Account
+                    <div class="dropdownContent">
+                        <!--<i class="material-icons custom">settings</i> SETTINGS ICON -->
+                        <button title='Settings' class="material-icons custom"> settings</button>
+                        <h7><br>Email:
+                            <p>example@example.com</p>
+                        </h7>
+                        <h7>Address:<br>
+                            <p>1234 Example St</p>
+                        </h7>
+                        <button onclick="location.href='../index.html';" type="button">Log Out</button>
+                    </div>
+                </div>
+            </header>
+
+            <div class="content">
+                <div>
+                    <div id="order-details" class="box">
+                        <div class="box-title">
+                            <b>Order Details</b>
+                        </div>
+                        <div class="box-content">
+                            <span class="qty">Samosa (x30)</span> <span class="price">$37.50</span><br>
+							Put into boxes, 3 per box <br>
+							dairy-free<br>
+							<span class="qty">Fried Rice(x2)</span> <span class="price">$17.98</span><br>
+							sodium-free<br>
+							<span class="qty">Vegetable Burger with Fries and Drink(x1)</span> <span class="price">$8.99</span><br>
+							Coke for drink <br><br>
+							<hr>
+							<b>Total</b> <span class="price">$64.47</span>
+                        </div>
+                    </div>
+                    <a href="javascript:history.back()"><button>Back</button></a>
+                </div>
+        
+        
+                <div class="box">
+                    <div id="payment-method">
+                        <div class="box-title">
+                            <b>Payment Options</b>
+                        </div>
+                        <div class="box-content">
+                            <input type="radio" name="payment-option" checked="checked" id="cashRadio">Cash <br>
+                            <input type="radio" name="payment-option" id="creditRadio">Debit/Credit <br>
+                                <div style="margin-left: 5%;">
+                                    Card Number <input placeholder="XXXX-XXXX-XXXX" id = cardNumberInfo><br>
+                                    Expiry Date <input placeholder="MM/YY" id = expiryInfo>
+                                    CVC <input class="cvc" id = cvcInfo><i class="material-icons">info</i><br>
+                                </div>
+                            <input type="radio" name="payment-option" id="giftCardRadio">Gift Card <br>
+                                <div style="margin-left: 5%;">
+                                    Card Number <input placeholder="XXXX-XXXX-XXXX" id = giftCardInfo><br>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+                    
+        
+                <div>
+                    <div id="delivery-instructions" class="box">
+                        <div class="box-title">
+                            <b>Delivery Instructions</b>
+                        </div>
+                        <div class="box-content">
+                            <input type="radio" name="delivery-option" checked="checked">Meet deliverer at door <i class="material-icons">person</i> <br>
+                            <input type="radio" name="delivery-option">Leave in front of door <i class="material-icons">shopping_basket</i>
+                        </div>
+                    </div>
+        
+                    <a href="delivery.html"><button style="float:right"; onclick = "return checkInput()">Place Order</button></a>
+                </div>    
+            </div>
+
+
+            <footer class="container">
+				<div class="copyright">COMP3020, <b>Group 45</b> © 2020</div> 
+				<nav>
+					<ul>
+						<li><a href="privacypolicy.html">Privacy Policy</a></li>
+						<li><a href="terms.html">Terms and Conditions</a></li>
+						<li><a href="contact.html">Contact us</a></li>
+					</ul>
+				</nav>
+		    </footer>
+        </article>
+    </body>
+</html>

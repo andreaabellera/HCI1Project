@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>I'm Hungry | Account Info</title>
         <link type="text/css" rel="stylesheet" href="accountinfo.css">
-        <script src="replaceLater.js"> </script>
+        <script src="accountinfo.js"> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 
@@ -25,11 +25,11 @@
 					</div>
 					<div class="box-content user-info">
 						<p> Name: </p>
-						<input>
+						<input id = "nameInfo">
 						<p>Email: </p>
-						<input>
+						<input id = "emailInfo">
 						<p>Password: </p>
-						<input>
+						<input id = "passwordInfo">
 					</div>
 				</div>	
 
@@ -103,7 +103,7 @@
 				</div>
 
 				<div class="right">
-					<a href="home.html"><button>Sign up</button></a>
+					<a href="home.html"><button onclick="return checkInput()">Sign up</button></a>
 				</div>
 			</div>
 			

@@ -5,7 +5,7 @@
         <meta charset="utf-8">
         <title>I'm Hungry | Delivery Status</title>
         <link type="text/css" rel="stylesheet" href="delivery.css">
-        <script src="replaceLater.js"> </script>
+        <script src="progress.js" defer> </script>
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
 	
@@ -51,10 +51,11 @@
                     <h1> Thank you for ordering at I'm Hungry. </h1>
                     <p> Your confirmation number is: 3P06Y4D8XC </p>
                     <p><b> A receipt had been sent to your email. </b></p>
-                    <div class="progress-bar">
-                        <!-- Insert progress bar here -->
-                    </div>
-                    <p class="progress-status">Waiting for restaurant to accept order... 0%</p>
+                    <div class="progress-bar" style="--width: 0" data-label="" ></div>
+                    
+                    <p class="progress-status" id="status">Accepting Order...</p>
+                    <p id="counter"></p>
+
                 </div>
 
             </div>

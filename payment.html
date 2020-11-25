@@ -57,16 +57,16 @@
                             <b>Payment Options</b>
                         </div>
                         <div class="box-content">
-                            <input type="radio" name="payment-option" checked="checked">Cash <br>
-                            <input type="radio" name="payment-option">Debit/Credit <br>
+                            <input type="radio" name="payment-option" checked="checked" id="cashRadio">Cash <br>
+                            <input type="radio" name="payment-option" id="creditRadio">Debit/Credit <br>
                                 <div style="margin-left: 5%;">
-                                    Card Number <input placeholder="XXXX-XXXX-XXXX"><br>
-                                    Expiry Date <input placeholder="MM/YY">
-                                    CVC <input class="cvc"><i class="material-icons">info</i><br>
+                                    Card Number <input placeholder="XXXX-XXXX-XXXX" id = cardNumberInfo><br>
+                                    Expiry Date <input placeholder="MM/YY" id = expiryInfo>
+                                    CVC <input class="cvc" id = cvcInfo><i class="material-icons">info</i><br>
                                 </div>
-                            <input type="radio" name="payment-option">Gift Card <br>
+                            <input type="radio" name="payment-option" id="giftCardRadio">Gift Card <br>
                                 <div style="margin-left: 5%;">
-                                    Card Number <input placeholder="XXXX-XXXX-XXXX"><br>
+                                    Card Number <input placeholder="XXXX-XXXX-XXXX" id = giftCardInfo><br>
                                 </div>
                         </div>
                     </div>
@@ -84,7 +84,7 @@
                         </div>
                     </div>
         
-                    <a href="delivery.html"><button style="float:right; onclick = "return checkInput()">Place Order</button></a>
+                    <a href="delivery.html"><button style="float:right"; onclick = "return checkInput()">Place Order</button></a>
                 </div>    
             </div>
 

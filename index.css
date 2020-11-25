@@ -190,6 +190,10 @@ button:hover{
     cursor:pointer
 }
 
+.set-btn {
+	width: 20.5%;
+}
+
 .wide{
     grid-column: 1/3;
 	width: 104%;

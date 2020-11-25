@@ -4,7 +4,7 @@ checkInput = function() {
 	var email = document.getElementById("emailInfo").value;
 	var password = document.getElementById("passwordInfo").value;
 	
-	var errorMsg = "Signup Failed. Missing field(s):";
+	var errorMsg = "Login Failed. Missing field(s):";
 	
 	if (email === '' || email == null) {
 		errorMsg = errorMsg.concat(" Email");

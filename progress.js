@@ -16,11 +16,11 @@ else{x.textContent="Your order has arrived!"}}setInterval(swapText, 3100)
 
 
 
-var timeleft = 10;
+var timeleft = 8;
 var downloadTimer = setInterval(function(){
   if(timeleft <= 0){
     clearInterval(downloadTimer);
-    document.getElementById("counter").innerHTML = "Finished";
+    document.getElementById("counter").innerHTML = "";
   } else {
     document.getElementById("counter").innerHTML = "ETA : " + timeleft + " seconds remaining";
   }

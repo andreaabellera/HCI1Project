@@ -264,3 +264,9 @@ function updateTotal(){
     document.getElementById("tID").innerHTML="$"+receiptTotal.toFixed(2);
     //console.log(receiptTotal);
 }
+
+// Popup
+function popUp() {
+    var popup = document.getElementById("myPopup");
+    popup.classList.toggle("show");
+}

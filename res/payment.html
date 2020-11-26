@@ -67,7 +67,10 @@
                                 <div style="margin-left: 5%;">
                                     Card Number <input placeholder="XXXX-XXXX-XXXX" id = cardNumberInfo><br>
                                     Expiry Date <input placeholder="MM/YY" id = expiryInfo>
-                                    CVC <input class="cvc" id = cvcInfo><i class="material-icons">info</i><br>
+                                    CVC <input class="cvc" id = cvcInfo>
+										<div class="popup" onclick="popUp()"><i class="material-icons">info</i><br>
+											<span class="popuptext" id="myPopup">The 3 numbers on the back of your card</span>
+										</div>
                                 </div>
                             <input type="radio" name="payment-option" id="giftCardRadio">Gift Card <br>
                                 <div style="margin-left: 5%;">
